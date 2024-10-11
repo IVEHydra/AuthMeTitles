@@ -1,0 +1,115 @@
+updateCheck: true
+
+messages:
+  prefix: "&aAuthMeTitles &7>>"
+  general:
+    noPermission: "%prefix% &cYou don't have that permission!"
+    configReloaded: "%prefix% &aConfig Reloaded!"
+    wrongArguments: "%prefix% &cWrong Arguments!"
+  updateCheck:
+    latestVersion: "%prefix% &aThis is the latest version of the plugin."
+    newVersionAvailable:
+      - "%prefix% &eThere is a new version available."
+      - "%prefix% &eYou can download it at: https://www.spigotmc.org/resources/authmetitles-1-8-1-21-1-titles-animated-titles-actionbars-bossbars.111370/"
+
+bossBar:
+  #If 'progress' is set to true, when the player needs to authenticate, the boss bar will decrease every second.
+  progress: true
+  color: RED
+  style: SOLID
+  message:
+    noRegister: "&fYou have &e%authme_time% &fseconds to register!"
+    noLogin: "&fYou have &e%authme_time% &fseconds to login!"
+
+actionBar:
+  noRegister: "&fYou have &e%authme_time% &fseconds to register!"
+  noLogin: "&fYou have &e%authme_time% &fseconds to login!"
+  register: "&aSuccessfully registered!"
+  login: "&aSuccessful login!"
+  sessionRestored: "&aSession Restored!"
+
+titles:
+  noRegister:
+    static:
+      #Title;SubTitle;FadeIn;Stay;FadeOut
+      title: "&fRegister;&fPlease, register with the command: &7/register <password> <confirmPassword>;1;30;1"
+    animated:
+      #If 'animated' is set to false only the static title will be displayed.
+      #If 'animated' is set to true only the animated titles will be displayed.
+      enabled: true
+      #Delay between the end of one title display and the start of the next title in sequence.
+      #Interval is calculated in ticks.
+      #20 Ticks = 1 Second.
+      interval: 10
+      loop: true
+      #Title;SubTitle;FadeIn;Stay;FadeOut
+      titles:
+        - "&fR;&f;0;2;0"
+        - "&fRe;&f;0;2;0"
+        - "&fReg;&f;0;2;0"
+        - "&fRegi;&f;0;2;0"
+        - "&fRegis;&f;0;2;0"
+        - "&fRegist;&f;0;2;0"
+        - "&fRegiste;&f;0;2;0"
+        - "&fRegister;&fPlease, register with the command: &7/register <password> <confirmPassword>;0;4;0"
+  noLogin:
+    static:
+      title: "&fLogin;&fPlease, login with the command: &7/login <password>;1;30;1"
+    animated:
+      enabled: true
+      interval: 10
+      loop: true
+      titles:
+        - "&aL;&f;0;2;0"
+        - "&fL&ao;&f;0;2;0"
+        - "&fLo&ag;&f;0;2;0"
+        - "&fLog&ai;&f;0;2;0"
+        - "&fLogi&an;&f;0;2;0"
+        - "&fLogin;&f;0;2;0"
+        - "&fLogin;&fPlease, login with the command: &7/login <password>;0;30;0"
+  register:
+    static:
+      title: "&aRegistered;&aSuccessfully registered!;1;2;1"
+    animated:
+      enabled: true
+      interval: 10
+      loop: true
+      titles:
+        - "&aR;&f;0;2;0"
+        - "&fR&ae;&f;0;2;0"
+        - "&fRe&ag;&f;0;2;0"
+        - "&fReg&ai;&f;0;2;0"
+        - "&fRegi&as;&f;0;2;0"
+        - "&fRegis&at;&f;0;2;0"
+        - "&fRegist&ae;&f;0;2;0"
+        - "&fRegiste&ar;&f;0;2;0"
+        - "&fRegister&ae;&f;0;2;0"
+        - "&fRegistere&ad;&f;0;2;0"
+        - "&aRegistered;&aSuccessfully registered!;1;2;1"
+  login:
+    static:
+      title: "&aLogin;&aSuccessful login;1;2;1"
+    animated:
+      enabled: true
+      interval: 10
+      loop: true
+      titles:
+        - "&2L;&f;0;2;0"
+        - "&fL&ao;&f;0;2;0"
+        - "&fLo&ag;&f;0;2;0"
+        - "&fLog&ai;&f;0;2;0"
+        - "&fLogi&an;&f;0;2;0"
+        - "&fLogin;&f;0;2;0"
+        - "&aLogin;&aSuccessful login;0;4;0"
+  sessionRestored:
+    static:
+      title: "&aSession Restored;&aSuccessful login;1;2;1"
+    animated:
+      enabled: true
+      interval: 10
+      loop: true
+      titles:
+        - "&aSession &eRestored;&aSuccessful login;1;2;1"
+        - "&eSession &aRestored;&aSuccessful login;1;2;1"
+        - "&aSession &eRestored;&aSuccessful login;1;2;1"
+        - "&eSession &aRestored;&aSuccessful login;1;2;1"
