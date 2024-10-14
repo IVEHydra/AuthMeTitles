@@ -6,7 +6,7 @@
 
     <groupId>me.ivehydra</groupId>
     <artifactId>AuthMeTitles</artifactId>
-    <version>2.5.2</version>
+    <version>2.5.3</version>
     <packaging>jar</packaging>
 
     <name>AuthMeTitles</name>

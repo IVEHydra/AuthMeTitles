@@ -2,12 +2,14 @@ package me.ivehydra.authmetitles;
 
 import me.ivehydra.authmetitles.commands.AuthMeTitlesCommands;
 import me.ivehydra.authmetitles.commands.AuthMeTitlesTabCompleter;
+import me.ivehydra.authmetitles.handler.AbstractHandler;
 import me.ivehydra.authmetitles.handler.handlers.ActionBarHandler;
-import me.ivehydra.authmetitles.handler.handlers.BossBarHandler;
 import me.ivehydra.authmetitles.handler.handlers.TitleHandler;
 import me.ivehydra.authmetitles.listeners.*;
+import me.ivehydra.authmetitles.utils.BossBarUtils;
 import me.ivehydra.authmetitles.utils.MessageUtils;
 import me.ivehydra.authmetitles.utils.StringUtils;
+import me.ivehydra.authmetitles.utils.VersionUtils;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -32,7 +34,7 @@ public class AuthMeTitles extends JavaPlugin {
     private static AuthMeTitles instance;
     private Map<Player, TitleHandler> activeTitle;
     private Map<Player, ActionBarHandler> activeActionBar;
-    private Map<Player, BossBarHandler> activeBossBar;
+    private Map<Player, AbstractHandler> activeBossBar;
 
     @Override
     public void onEnable() {
@@ -58,6 +60,29 @@ public class AuthMeTitles extends JavaPlugin {
             if(getDescription().getVersion().equals(version)) sendLog(MessageUtils.LATEST_VERSION.getFormattedMessage("%prefix%", MessageUtils.PREFIX.toString()));
             else instance.getConfig().getStringList(MessageUtils.NEW_VERSION.getPath()).forEach(message -> sendLog(StringUtils.getColoredString(message).replace("%prefix%", MessageUtils.PREFIX.toString())));
         });
+
+        if(!VersionUtils.isAtLeastVersion19()) {
+            new Thread(() -> {
+                while(true) {
+                    for(String name : BossBarUtils.getPlayers()) {
+                        Player p = Bukkit.getPlayer(name);
+                        if(p != null) {
+                            try {
+                                BossBarUtils.teleportBossBar(p);
+                            } catch (Exception e) {
+                                sendLog("[AuthMeTitles] " + e.getMessage());
+                            }
+                        }
+                    }
+                    try {
+                        Thread.sleep(1000);
+                    } catch(Exception e) {
+                        sendLog("[AuthMeTitles] " + e.getMessage());
+                    }
+                }
+            }).start();
+        }
+
     }
 
     public static AuthMeTitles getInstance() { return instance; }
@@ -66,7 +91,7 @@ public class AuthMeTitles extends JavaPlugin {
 
     public Map<Player, ActionBarHandler> getActiveActionBar() { return activeActionBar; }
 
-    public Map<Player, BossBarHandler> getActiveBossBar() { return activeBossBar; }
+    public Map<Player, AbstractHandler> getActiveBossBar() { return activeBossBar; }
 
     private boolean registerAuthMe() { return Bukkit.getPluginManager().getPlugin("AuthMe") != null; }
 

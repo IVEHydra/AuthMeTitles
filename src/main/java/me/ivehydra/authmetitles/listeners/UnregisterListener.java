@@ -3,7 +3,8 @@ package me.ivehydra.authmetitles.listeners;
 import fr.xephi.authme.events.UnregisterByAdminEvent;
 import fr.xephi.authme.events.UnregisterByPlayerEvent;
 import me.ivehydra.authmetitles.handler.handlers.ActionBarHandler;
-import me.ivehydra.authmetitles.handler.handlers.BossBarHandler;
+import me.ivehydra.authmetitles.handler.handlers.bossbar.BossBar18Handler;
+import me.ivehydra.authmetitles.handler.handlers.bossbar.BossBar19Handler;
 import me.ivehydra.authmetitles.handler.handlers.TitleHandler;
 import me.ivehydra.authmetitles.utils.VersionUtils;
 import org.bukkit.entity.Player;
@@ -18,7 +19,8 @@ public class UnregisterListener implements Listener {
 
         TitleHandler.handle(p, "titles.noRegister", false);
         ActionBarHandler.handle(p, "noRegister");
-        if(VersionUtils.isAtLeastVersion19()) BossBarHandler.handle(p, "noRegister");
+        if(VersionUtils.isAtLeastVersion19()) BossBar19Handler.handle(p, "noRegister");
+        else BossBar18Handler.handle(p, "noRegister");
 
     }
 
@@ -28,7 +30,8 @@ public class UnregisterListener implements Listener {
 
         TitleHandler.handle(p, "titles.noRegister", false);
         ActionBarHandler.handle(p, "noRegister");
-        if(VersionUtils.isAtLeastVersion19()) BossBarHandler.handle(p, "noRegister");
+        if(VersionUtils.isAtLeastVersion19()) BossBar19Handler.handle(p, "noRegister");
+        else BossBar18Handler.handle(p, "noRegister");
 
     }
 

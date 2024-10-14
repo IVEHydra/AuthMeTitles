@@ -1,46 +1,42 @@
-package me.ivehydra.authmetitles.handler.handlers;
+package me.ivehydra.authmetitles.handler.handlers.bossbar;
 
 import fr.xephi.authme.AuthMe;
 import fr.xephi.authme.api.v3.AuthMeApi;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.ivehydra.authmetitles.AuthMeTitles;
 import me.ivehydra.authmetitles.handler.AbstractHandler;
+import me.ivehydra.authmetitles.utils.BossBarUtils;
 import me.ivehydra.authmetitles.utils.MessageUtils;
 import me.ivehydra.authmetitles.utils.StringUtils;
 import me.ivehydra.authmetitles.utils.VersionUtils;
-import org.bukkit.Bukkit;
-import org.bukkit.boss.BarColor;
-import org.bukkit.boss.BarStyle;
-import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Objects;
 
-public class BossBarHandler extends AbstractHandler {
+public class BossBar18Handler extends AbstractHandler {
 
+    private final AuthMeTitles instance = AuthMeTitles.getInstance();
     private final int timeout;
-    private BossBar bossBar;
     private final boolean progress;
-    private final BarColor color;
-    private final BarStyle style;
 
-    public BossBarHandler(Player p, String string, int timeout, boolean progress, BarColor color, BarStyle style) {
+    public BossBar18Handler(Player p, String string, int timeout, boolean progress) {
         super(p, string);
         this.timeout = timeout;
         this.progress = progress;
-        this.color = color;
-        this.style = style;
     }
 
     @Override
     public void start() {
-        if(!VersionUtils.isAtLeastVersion19()) return;
+        if(VersionUtils.isAtLeastVersion19()) return;
 
         stop();
 
-        bossBar = Bukkit.createBossBar(StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeout)).replace("%prefix%", MessageUtils.PREFIX.getPath()), color, style);
-        bossBar.addPlayer(p);
+        try {
+            BossBarUtils.addBossBar(p, StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeout)).replace("%prefix%", MessageUtils.PREFIX.toString()), 100);
+        } catch(Exception e) {
+            instance.sendLog("[AuthMeTitles] " + e.getMessage());
+        }
 
         setTaskId(new BukkitRunnable() {
             int timeLeft = timeout;
@@ -50,44 +46,48 @@ public class BossBarHandler extends AbstractHandler {
                     stop();
                     return;
                 }
-                bossBar.setTitle(StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeLeft)).replace("%prefix%", MessageUtils.PREFIX.getPath()));
-                if(progress) {
-                    double value = (double) timeLeft / timeout;
-                    bossBar.setProgress(value);
+                try {
+                    BossBarUtils.updateText(p, StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeLeft)).replace("%prefix%", MessageUtils.PREFIX.toString()));
+                    if(progress) {
+                        double value = (double) timeLeft / timeout;
+                        BossBarUtils.updateHealth(p, (float) value);
+                    }
+                } catch (Exception e) {
+                    instance.sendLog("[AuthMeTitles] " + e.getMessage());
                 }
                 timeLeft--;
             }
         }.runTaskTimer(instance, 0L, 20L).getTaskId());
+
     }
 
     @Override
     public void stop() {
         super.stop();
-        if(bossBar != null) {
+        try {
             instance.getActiveBossBar().remove(p);
-            bossBar.removePlayer(p);
-            if(bossBar.getPlayers().isEmpty())
-                bossBar = null;
+            BossBarUtils.removeBossBar(p);
+        } catch (Exception e) {
+            instance.sendLog("[AuthMeTitles] " + e.getMessage());
         }
     }
 
     public static void handle(Player p, String path) {
         AuthMeTitles instance = AuthMeTitles.getInstance();
-        BossBarHandler bossBarHandler = instance.getActiveBossBar().get(p);
-
-        if(bossBarHandler != null)
-            bossBarHandler.stop();
+        AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
+        if(abstractHandler != null) {
+            if(abstractHandler instanceof BossBar18Handler) {
+                instance.getLogger().info("BossBar18Handler : AbstractHandler");
+                abstractHandler.stop();
+            }
+        }
 
         boolean progress = instance.getConfig().getBoolean("bossBar.progress");
-        BarColor color = BarColor.valueOf(instance.getConfig().getString("bossBar.color"));
-        BarStyle style = BarStyle.valueOf(instance.getConfig().getString("bossBar.style"));
         String string = instance.getConfig().getString("bossBar.message." + path);
-
         string = instance.isPlaceholderAPIPresent() ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(string)) : string;
-
         AuthMe authMe = AuthMeApi.getInstance().getPlugin();
         int timeOut = authMe.getConfig().getInt("settings.restrictions.timeout");
-        BossBarHandler newBossBarHandler = new BossBarHandler(p, string, timeOut, progress, color, style);
+        BossBar18Handler newBossBarHandler = new BossBar18Handler(p, string, timeOut, progress);
 
         newBossBarHandler.start();
         instance.getActiveBossBar().put(p, newBossBarHandler);
