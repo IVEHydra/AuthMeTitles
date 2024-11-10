@@ -67,7 +67,7 @@ public class TitleHandler extends AbstractHandler {
     @Override
     public void stop() {
         super.stop();
-        if(last) instance.getActiveTitle().remove(p);
+        instance.getActiveTitle().remove(p);
     }
 
     public static void handle(Player p, String path, boolean last) {

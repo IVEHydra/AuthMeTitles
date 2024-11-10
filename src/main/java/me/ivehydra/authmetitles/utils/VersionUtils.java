@@ -18,8 +18,8 @@ public class VersionUtils {
             int serverMin = Integer.parseInt(args[1]);
 
             if(serverMajor > major) return true;
-            else if(serverMajor == major) return serverMin >= min;
-            else return false;
+            if(serverMajor == major) return serverMin >= min;
+            return false;
         } catch(NumberFormatException | ArrayIndexOutOfBoundsException e) {
             instance.sendLog("[AuthMeTitles]" + ChatColor.RED + " Error while parsing Bukkit Version: " + version);
             instance.sendLog("[AuthMeTitles]" + ChatColor.RED + " Error details: " + e.getMessage());

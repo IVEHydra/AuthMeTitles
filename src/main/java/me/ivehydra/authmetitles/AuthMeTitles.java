@@ -6,7 +6,6 @@ import me.ivehydra.authmetitles.handler.AbstractHandler;
 import me.ivehydra.authmetitles.handler.handlers.ActionBarHandler;
 import me.ivehydra.authmetitles.handler.handlers.TitleHandler;
 import me.ivehydra.authmetitles.listeners.*;
-import me.ivehydra.authmetitles.utils.BossBarUtils;
 import me.ivehydra.authmetitles.utils.MessageUtils;
 import me.ivehydra.authmetitles.utils.StringUtils;
 import me.ivehydra.authmetitles.utils.VersionUtils;
@@ -61,28 +60,6 @@ public class AuthMeTitles extends JavaPlugin {
             else instance.getConfig().getStringList(MessageUtils.NEW_VERSION.getPath()).forEach(message -> sendLog(StringUtils.getColoredString(message).replace("%prefix%", MessageUtils.PREFIX.toString())));
         });
 
-        if(!VersionUtils.isAtLeastVersion19()) {
-            new Thread(() -> {
-                while(true) {
-                    for(String name : BossBarUtils.getPlayers()) {
-                        Player p = Bukkit.getPlayer(name);
-                        if(p != null) {
-                            try {
-                                BossBarUtils.teleportBossBar(p);
-                            } catch (Exception e) {
-                                sendLog("[AuthMeTitles] " + e.getMessage());
-                            }
-                        }
-                    }
-                    try {
-                        Thread.sleep(1000);
-                    } catch(Exception e) {
-                        sendLog("[AuthMeTitles] " + e.getMessage());
-                    }
-                }
-            }).start();
-        }
-
     }
 
     public static AuthMeTitles getInstance() { return instance; }
@@ -122,6 +99,8 @@ public class AuthMeTitles extends JavaPlugin {
     private void registerListeners() {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new PlayerJoinListener(), this);
+        if(!VersionUtils.isAtLeastVersion19())
+            pm.registerEvents(new PlayerMoveListener(), this);
         pm.registerEvents(new RegisterListener(), this);
         pm.registerEvents(new LoginListener(), this);
         pm.registerEvents(new RestoreSessionListener(), this);

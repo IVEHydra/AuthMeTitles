@@ -15,7 +15,9 @@ messages:
 bossBar:
   #If 'progress' is set to true, when the player needs to authenticate, the boss bar will decrease every second.
   progress: true
+  #Only works for 1.9+ versions.
   color: RED
+  #Only works for 1.9+ versions.
   style: SOLID
   message:
     noRegister: "&fYou have &e%authme_time% &fseconds to register!"

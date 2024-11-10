@@ -4,10 +4,7 @@ import fr.xephi.authme.events.RegisterEvent;
 import me.ivehydra.authmetitles.AuthMeTitles;
 import me.ivehydra.authmetitles.handler.AbstractHandler;
 import me.ivehydra.authmetitles.handler.handlers.ActionBarHandler;
-import me.ivehydra.authmetitles.handler.handlers.bossbar.BossBar18Handler;
-import me.ivehydra.authmetitles.handler.handlers.bossbar.BossBar19Handler;
 import me.ivehydra.authmetitles.handler.handlers.TitleHandler;
-import me.ivehydra.authmetitles.utils.VersionUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,10 +19,7 @@ public class RegisterListener implements Listener {
         Player p = e.getPlayer();
         AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
 
-        if(abstractHandler != null) {
-            if(VersionUtils.isAtLeastVersion19() && abstractHandler instanceof BossBar19Handler) abstractHandler.stop();
-            else if(!VersionUtils.isAtLeastVersion19() && abstractHandler instanceof BossBar18Handler) abstractHandler.stop();
-        }
+        abstractHandler.stop();
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(instance, () -> {
             TitleHandler.handle(p, "titles.register", true);

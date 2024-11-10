@@ -37,8 +37,6 @@ public class BossBar19Handler extends AbstractHandler {
     public void start() {
         if(!VersionUtils.isAtLeastVersion19()) return;
 
-        stop();
-
         bossBar = Bukkit.createBossBar(StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeout)).replace("%prefix%", MessageUtils.PREFIX.toString()), color, style);
         bossBar.addPlayer(p);
 
@@ -76,18 +74,13 @@ public class BossBar19Handler extends AbstractHandler {
         AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
 
         if(abstractHandler != null)
-            if(abstractHandler instanceof BossBar19Handler) {
-                instance.getLogger().info("BossBar19Handler : AbstractHandler");
-                abstractHandler.stop();
-            }
+            abstractHandler.stop();
 
         boolean progress = instance.getConfig().getBoolean("bossBar.progress");
         BarColor color = BarColor.valueOf(instance.getConfig().getString("bossBar.color"));
         BarStyle style = BarStyle.valueOf(instance.getConfig().getString("bossBar.style"));
         String string = instance.getConfig().getString("bossBar.message." + path);
-
         string = instance.isPlaceholderAPIPresent() ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(string)) : string;
-
         AuthMe authMe = AuthMeApi.getInstance().getPlugin();
         int timeOut = authMe.getConfig().getInt("settings.restrictions.timeout");
         BossBar19Handler newBossBarHandler = new BossBar19Handler(p, string, timeOut, progress, color, style);

@@ -8,6 +8,7 @@ import me.ivehydra.authmetitles.AuthMeTitles;
 import me.ivehydra.authmetitles.handler.AbstractHandler;
 import me.ivehydra.authmetitles.utils.MessageUtils;
 import me.ivehydra.authmetitles.utils.StringUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -26,11 +27,11 @@ public class ActionBarHandler extends AbstractHandler {
 
     @Override
     public void start() {
-        stop();
 
-        if(!dynamic)
+        if(!dynamic) {
             ActionBar.sendActionBar(p, StringUtils.getColoredString(string).replace("%prefix%", MessageUtils.PREFIX.getPath()));
-        else {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(instance, this::stop, 1L);
+        } else {
             setTaskId(new BukkitRunnable() {
                 int timeLeft = timeout;
                 @Override
@@ -49,14 +50,16 @@ public class ActionBarHandler extends AbstractHandler {
     @Override
     public void stop() {
         super.stop();
-        if(!dynamic) instance.getActiveActionBar().remove(p);
+        instance.getActiveActionBar().remove(p);
     }
 
     public static void handle(Player p, String path) {
         AuthMeTitles instance = AuthMeTitles.getInstance();
         ActionBarHandler actionBarHandler = instance.getActiveActionBar().get(p);
+
         if(actionBarHandler != null)
             actionBarHandler.stop();
+
         String actionBar = instance.getConfig().getString("actionBar." + path);
         actionBar = instance.isPlaceholderAPIPresent() ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(actionBar)) : actionBar;
         boolean dynamic = path.equals("noRegister") || path.equals("noLogin");
@@ -64,6 +67,7 @@ public class ActionBarHandler extends AbstractHandler {
         int configTimeOut = authMe.getConfig().getInt("settings.restrictions.timeout");
         int timeout = dynamic ? configTimeOut : 0;
         ActionBarHandler newActionBarHandler = new ActionBarHandler(p, actionBar, timeout, dynamic);
+
         newActionBarHandler.start();
         instance.getActiveActionBar().put(p, newActionBarHandler);
     }

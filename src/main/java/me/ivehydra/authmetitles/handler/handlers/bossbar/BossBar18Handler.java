@@ -30,13 +30,7 @@ public class BossBar18Handler extends AbstractHandler {
     public void start() {
         if(VersionUtils.isAtLeastVersion19()) return;
 
-        stop();
-
-        try {
-            BossBarUtils.addBossBar(p, StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeout)).replace("%prefix%", MessageUtils.PREFIX.toString()), 100);
-        } catch(Exception e) {
-            instance.sendLog("[AuthMeTitles] " + e.getMessage());
-        }
+        BossBarUtils.addWither(p, StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeout)).replace("%prefix%", MessageUtils.PREFIX.toString()), 300);
 
         setTaskId(new BukkitRunnable() {
             int timeLeft = timeout;
@@ -46,14 +40,10 @@ public class BossBar18Handler extends AbstractHandler {
                     stop();
                     return;
                 }
-                try {
-                    BossBarUtils.updateText(p, StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeLeft)).replace("%prefix%", MessageUtils.PREFIX.toString()));
-                    if(progress) {
-                        double value = (double) timeLeft / timeout;
-                        BossBarUtils.updateHealth(p, (float) value);
-                    }
-                } catch (Exception e) {
-                    instance.sendLog("[AuthMeTitles] " + e.getMessage());
+                BossBarUtils.updateText(p, StringUtils.getColoredString(string).replace("%authme_time%", String.valueOf(timeLeft)).replace("%prefix%", MessageUtils.PREFIX.toString()));
+                if(progress) {
+                    float value = (float) timeLeft / timeout * 300;
+                    BossBarUtils.updateHealth(p, value);
                 }
                 timeLeft--;
             }
@@ -64,23 +54,16 @@ public class BossBar18Handler extends AbstractHandler {
     @Override
     public void stop() {
         super.stop();
-        try {
-            instance.getActiveBossBar().remove(p);
-            BossBarUtils.removeBossBar(p);
-        } catch (Exception e) {
-            instance.sendLog("[AuthMeTitles] " + e.getMessage());
-        }
+        BossBarUtils.removeWither(p);
+        instance.getActiveBossBar().remove(p);
     }
 
     public static void handle(Player p, String path) {
         AuthMeTitles instance = AuthMeTitles.getInstance();
         AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
-        if(abstractHandler != null) {
-            if(abstractHandler instanceof BossBar18Handler) {
-                instance.getLogger().info("BossBar18Handler : AbstractHandler");
-                abstractHandler.stop();
-            }
-        }
+
+        if(abstractHandler != null)
+            abstractHandler.stop();
 
         boolean progress = instance.getConfig().getBoolean("bossBar.progress");
         String string = instance.getConfig().getString("bossBar.message." + path);
