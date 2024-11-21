@@ -10,7 +10,7 @@ messages:
     latestVersion: "%prefix% &aThis is the latest version of the plugin."
     newVersionAvailable:
       - "%prefix% &eThere is a new version available."
-      - "%prefix% &eYou can download it at: https://www.spigotmc.org/resources/authmetitles-1-8-1-21-1-titles-animated-titles-actionbars-bossbars.111370/"
+      - "%prefix% &eYou can download it at: https://www.spigotmc.org/resources/authmetitles-1-8-1-21-3-titles-animated-titles-actionbars-bossbars.111370/"
 
 bossBar:
   #If 'progress' is set to true, when the player needs to authenticate, the boss bar will decrease every second.
