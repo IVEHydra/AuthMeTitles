@@ -7,9 +7,9 @@ messages:
     configReloaded: "%prefix% &aConfig Reloaded!"
     wrongArguments: "%prefix% &cWrong Arguments!"
   updateCheck:
-    latestVersion: "%prefix% &aThis is the latest version of the plugin."
+    latestVersion: "%prefix% &aThis is the latest version(%current_version%) of the plugin."
     newVersionAvailable:
-      - "%prefix% &eThere is a new version available."
+      - "%prefix% &eThere is a new version(%new_version%) available."
       - "%prefix% &eYou can download it at: https://www.spigotmc.org/resources/authmetitles-1-8-1-21-3-titles-animated-titles-actionbars-bossbars.111370/"
 
 bossBar:
