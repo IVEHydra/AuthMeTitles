@@ -59,7 +59,10 @@ public class TitleHandler extends AbstractHandler {
 
         Titles.sendTitle(p, fadeIn * 20, stay * 20, fadeOut * 20, StringUtils.getColoredString(title).replace("%prefix%", MessageUtils.PREFIX.getPath()), StringUtils.getColoredString(subTitle).replace("%prefix%", MessageUtils.PREFIX.getPath()));
 
-        setTaskId(Bukkit.getScheduler().scheduleSyncDelayedTask(instance, this::send, interval));
+        int delay = (args.length == 6) ? Integer.parseInt(args[5]) : -1;
+        long nextDelay = (delay != -1) ? delay : interval;
+
+        setTaskId(Bukkit.getScheduler().scheduleSyncDelayedTask(instance, this::send, nextDelay));
 
         index++;
     }

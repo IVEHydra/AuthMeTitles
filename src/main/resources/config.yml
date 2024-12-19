@@ -10,7 +10,7 @@ messages:
     latestVersion: "%prefix% &aThis is the latest version(%current_version%) of the plugin."
     newVersionAvailable:
       - "%prefix% &eThere is a new version(%new_version%) available."
-      - "%prefix% &eYou can download it at: https://www.spigotmc.org/resources/authmetitles-1-8-1-21-3-titles-animated-titles-actionbars-bossbars.111370/"
+      - "%prefix% &eYou can download it at: https://www.spigotmc.org/resources/authmetitles-1-8-1-21-4-titles-animated-titles-actionbars-bossbars.111370/"
 
 bossBar:
   #If 'progress' is set to true, when the player needs to authenticate, the boss bar will decrease every second.
@@ -44,7 +44,7 @@ titles:
       #20 Ticks = 1 Second.
       interval: 10
       loop: true
-      #Title;SubTitle;FadeIn;Stay;FadeOut
+      #Title;SubTitle;FadeIn;Stay;FadeOut;DelayBeforeSendingNext
       titles:
         - "&fR;&f;0;2;0"
         - "&fRe;&f;0;2;0"
