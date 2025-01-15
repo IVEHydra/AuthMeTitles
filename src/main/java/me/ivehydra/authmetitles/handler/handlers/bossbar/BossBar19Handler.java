@@ -70,6 +70,8 @@ public class BossBar19Handler extends AbstractHandler {
     }
 
     public static void handle(Player p, String path) {
+        if(p == null || !p.isOnline()) return;
+
         AuthMeTitles instance = AuthMeTitles.getInstance();
         AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
 

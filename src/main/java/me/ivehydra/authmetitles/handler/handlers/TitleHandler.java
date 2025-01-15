@@ -74,6 +74,8 @@ public class TitleHandler extends AbstractHandler {
     }
 
     public static void handle(Player p, String path, boolean last) {
+        if(p == null || !p.isOnline()) return;
+
         AuthMeTitles instance = AuthMeTitles.getInstance();
         TitleHandler animation = instance.getActiveTitle().get(p);
 
