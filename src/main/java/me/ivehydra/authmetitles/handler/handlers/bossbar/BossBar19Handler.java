@@ -73,6 +73,10 @@ public class BossBar19Handler extends AbstractHandler {
         if(p == null || !p.isOnline()) return;
 
         AuthMeTitles instance = AuthMeTitles.getInstance();
+        boolean enabled = instance.getConfig().getBoolean("bossBar.enabled");
+
+        if(!enabled) return;
+
         AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
 
         if(abstractHandler != null)

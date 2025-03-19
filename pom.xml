@@ -6,7 +6,7 @@
 
     <groupId>me.ivehydra</groupId>
     <artifactId>AuthMeTitles</artifactId>
-    <version>2.6.4</version>
+    <version>2.6.5</version>
     <packaging>jar</packaging>
 
     <name>AuthMeTitles</name>
@@ -114,6 +114,14 @@
                                         <exclude>com/cryptomorin/xseries/base/annotations/XInfo*</exclude>
                                         <exclude>com/cryptomorin/xseries/base/annotations/XMerge*</exclude>
                                         <exclude>com/cryptomorin/xseries/base/annotations/XMerges*</exclude>
+                                        <exclude>com/cryptomorin/xseries/art/BukkitArt*</exclude>
+                                        <exclude>com/cryptomorin/xseries/art/NewArt*</exclude>
+                                        <exclude>com/cryptomorin/xseries/art/OldArt*</exclude>
+                                        <exclude>com/cryptomorin/xseries/art/XArt*</exclude>
+                                        <exclude>com/cryptomorin/xseries/inventory/BukkitInventoryView*</exclude>
+                                        <exclude>com/cryptomorin/xseries/inventory/NewInventoryView*</exclude>
+                                        <exclude>com/cryptomorin/xseries/inventory/OldInventoryView*</exclude>
+                                        <exclude>com/cryptomorin/xseries/inventory/XInventoryView*</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
@@ -155,7 +163,7 @@
         <dependency>
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
-            <version>13.0.0</version>
+            <version>13.1.0</version>
         </dependency>
         <dependency>
             <groupId>fr.xephi</groupId>

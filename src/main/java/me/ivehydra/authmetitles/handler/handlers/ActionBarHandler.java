@@ -57,6 +57,10 @@ public class ActionBarHandler extends AbstractHandler {
         if(p == null || !p.isOnline()) return;
 
         AuthMeTitles instance = AuthMeTitles.getInstance();
+        boolean enabled = instance.getConfig().getBoolean("actionBar.enabled");
+
+        if(!enabled) return;
+
         ActionBarHandler actionBarHandler = instance.getActiveActionBar().get(p);
 
         if(actionBarHandler != null)

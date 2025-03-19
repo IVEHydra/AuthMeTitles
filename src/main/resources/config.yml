@@ -13,6 +13,7 @@ messages:
       - "%prefix% &eYou can download it at: https://www.spigotmc.org/resources/authmetitles-1-8-1-21-4-titles-animated-titles-actionbars-bossbars.111370/"
 
 bossBar:
+  enabled: true
   #If 'progress' is set to true, when the player needs to authenticate, the boss bar will decrease every second.
   progress: true
   #Only works for 1.9+ versions.
@@ -24,6 +25,7 @@ bossBar:
     noLogin: "&fYou have &e%authme_time% &fseconds to login!"
 
 actionBar:
+  enabled: true
   noRegister: "&fYou have &e%authme_time% &fseconds to register!"
   noLogin: "&fYou have &e%authme_time% &fseconds to login!"
   register: "&aSuccessfully registered!"
