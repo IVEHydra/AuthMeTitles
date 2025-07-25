@@ -6,6 +6,7 @@ import me.ivehydra.authmetitles.AuthMeTitles;
 import me.ivehydra.authmetitles.handler.AbstractHandler;
 import me.ivehydra.authmetitles.utils.MessageUtils;
 import me.ivehydra.authmetitles.utils.StringUtils;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -22,20 +23,21 @@ public class TitleHandler extends AbstractHandler {
     private int index = 0;
 
     public TitleHandler(Player p, List<String> titles, int interval, boolean loop, boolean last) {
-        super(p, titles.isEmpty() ? "" : titles.get(0));
+        super(p, validateTitles(titles));
         this.titles = titles;
         this.interval = interval;
         this.loop = loop;
         this.last = last;
     }
 
-    @Override
-    public void start() {
-        if(!titles.isEmpty())
-            send();
+    private static String validateTitles(List<String> titles) {
+        if(titles == null || titles.isEmpty())
+            throw new IllegalArgumentException("[AuthMeTitles]" + ChatColor.RED + " Titles list cannot be null or empty.");
+        return titles.get(0);
     }
 
-    private void send() {
+    @Override
+    public void start() {
         if(!p.isOnline()) {
             stop();
             return;
@@ -62,7 +64,7 @@ public class TitleHandler extends AbstractHandler {
         int delay = (args.length == 6) ? Integer.parseInt(args[5]) : -1;
         long nextDelay = (delay != -1) ? delay : interval;
 
-        setTaskId(Bukkit.getScheduler().scheduleSyncDelayedTask(instance, this::send, nextDelay));
+        setTaskId(Bukkit.getScheduler().scheduleSyncDelayedTask(instance, this::start, nextDelay));
 
         index++;
     }
@@ -82,7 +84,9 @@ public class TitleHandler extends AbstractHandler {
         if(animation != null)
             animation.stop();
 
-        if(instance.getConfig().getBoolean(path + ".animated.enabled")) {
+        boolean enabled = instance.getConfig().getBoolean(path + ".animated.enabled");
+
+        if(enabled) {
             List<String> titles = instance.getConfig().getStringList(path + ".animated.titles");
             titles = instance.isPlaceholderAPIPresent() ? titles.stream().map(title -> PlaceholderAPI.setPlaceholders(p, title)).collect(Collectors.toList()) : titles;
             int interval = instance.getConfig().getInt(path + ".animated.interval");
@@ -93,11 +97,17 @@ public class TitleHandler extends AbstractHandler {
             instance.getActiveTitle().put(p, successTitle);
         } else {
             String[] args = Objects.requireNonNull(instance.getConfig().getString(path + ".static.title")).replace("%prefix%", MessageUtils.PREFIX.getPath()).split(";");
+            String title = args[0];
+            String subTitle = args[1];
+            int fadeIn = Integer.parseInt(args[2]);
+            int stay = Integer.parseInt(args[3]);
+            int fadeOut = Integer.parseInt(args[4]);
+
             if(instance.isPlaceholderAPIPresent()) {
-                args[0] = PlaceholderAPI.setPlaceholders(p, args[0]);
-                args[1] = PlaceholderAPI.setPlaceholders(p, args[1]);
+                title = PlaceholderAPI.setPlaceholders(p, title);
+                subTitle = PlaceholderAPI.setPlaceholders(p, subTitle);
             }
-            Titles.sendTitle(p, Integer.parseInt(args[2]) * 20, Integer.parseInt(args[3]) * 20, Integer.parseInt(args[4]) * 20, StringUtils.getColoredString(args[0]), StringUtils.getColoredString(args[1]));
+            Titles.sendTitle(p, fadeIn * 20, stay * 20, fadeOut * 20, StringUtils.getColoredString(title), StringUtils.getColoredString(subTitle));
         }
     }
 

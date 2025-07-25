@@ -2,9 +2,9 @@ name: AuthMeTitles
 main: me.ivehydra.authmetitles.AuthMeTitles
 author: IVEHydra
 description: Sends Titles, AnimatedTitles, ActionBars and BossBars on Login and Register.
-version: 2.6.6
+version: 2.6.7
 api-version: 1.13
-soft-depend: [PlaceholderAPI]
+softdepend: [PlaceholderAPI]
 depend: [AuthMe]
 
 commands:
