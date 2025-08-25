@@ -10,7 +10,6 @@ messages:
     latestVersion: "%prefix% &aThis is the latest version(%current_version%) of the plugin."
     newVersionAvailable:
       - "%prefix% &eThere is a new version(%new_version%) available."
-      - "%prefix% &eYou can download it at: https://www.spigotmc.org/resources/authmetitles-1-8-1-21-8-titles-animated-titles-actionbars-bossbars.111370/"
 
 bossBar:
   enabled: true
@@ -21,22 +20,22 @@ bossBar:
   #Only works for 1.9+ versions.
   style: SOLID
   message:
-    noRegister: "&fYou have &e%authme_time% &fseconds to register!"
+    noRegister: "&fYou have &3%authme_time% &fseconds to register!"
     noLogin: "&fYou have &e%authme_time% &fseconds to login!"
 
 actionBar:
   enabled: true
-  noRegister: "&fYou have &e%authme_time% &fseconds to register!"
+  noRegister: "&fYou have &3%authme_time% &fseconds to register!"
   noLogin: "&fYou have &e%authme_time% &fseconds to login!"
-  register: "&aSuccessfully registered!"
+  register: "&2Successfully registered!"
   login: "&aSuccessful login!"
-  sessionRestored: "&aSession Restored!"
+  sessionRestored: "&6Session Restored!"
 
 titles:
   noRegister:
     static:
       #Title;SubTitle;FadeIn;Stay;FadeOut
-      title: "&fRegister;&fPlease, register with the command: &7/register <password> <confirmPassword>;1;30;1"
+      title: "&3Register;&fPlease, register with the command: &3/register <password> <confirmPassword>;1;30;1"
     animated:
       #If 'animated' is set to false only the static title will be displayed.
       #If 'animated' is set to true only the animated titles will be displayed.
@@ -44,76 +43,185 @@ titles:
       #Delay between the end of one title display and the start of the next title in sequence.
       #Interval is calculated in ticks.
       #20 Ticks = 1 Second.
-      interval: 10
+      interval: 1
       loop: true
       #Title;SubTitle;FadeIn;Stay;FadeOut;DelayBeforeSendingNext
       titles:
-        - "&fR;&f;0;2;0"
-        - "&fRe;&f;0;2;0"
-        - "&fReg;&f;0;2;0"
-        - "&fRegi;&f;0;2;0"
-        - "&fRegis;&f;0;2;0"
-        - "&fRegist;&f;0;2;0"
-        - "&fRegiste;&f;0;2;0"
-        - "&fRegister;&fPlease, register with the command: &7/register <password> <confirmPassword>;0;4;0"
+        - "&x&E&0&F&3&F&0R&x&F&F&F&F&F&Fe&x&E&0&F&3&F&0g&x&C&0&E&7&E&1i&x&A&1&D&B&D&2s&x&8&2&D&0&C&3t&x&6&3&C&4&B&4e&x&4&3&B&8&A&5r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&C&0&E&7&E&1R&x&E&0&F&3&F&0e&x&F&F&F&F&F&Fg&x&E&0&F&3&F&0i&x&C&0&E&7&E&1s&x&A&1&D&B&D&2t&x&8&2&D&0&C&3e&x&6&3&C&4&B&4r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&A&1&D&B&D&2R&x&C&0&E&7&E&1e&x&E&0&F&3&F&0g&x&F&F&F&F&F&Fi&x&E&0&F&3&F&0s&x&C&0&E&7&E&1t&x&A&1&D&B&D&2e&x&8&2&D&0&C&3r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&8&2&D&0&C&3R&x&A&1&D&B&D&2e&x&C&0&E&7&E&1g&x&E&0&F&3&F&0i&x&F&F&F&F&F&Fs&x&E&0&F&3&F&0t&x&C&0&E&7&E&1e&x&A&1&D&B&D&2r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&6&3&C&4&B&4R&x&8&2&D&0&C&3e&x&A&1&D&B&D&2g&x&C&0&E&7&E&1i&x&E&0&F&3&F&0s&x&F&F&F&F&F&Ft&x&E&0&F&3&F&0e&x&C&0&E&7&E&1r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&4&3&B&8&A&5R&x&6&3&C&4&B&4e&x&8&2&D&0&C&3g&x&A&1&D&B&D&2i&x&C&0&E&7&E&1s&x&E&0&F&3&F&0t&x&F&F&F&F&F&Fe&x&E&0&F&3&F&0r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&2&4&A&C&9&6R&x&4&3&B&8&A&5e&x&6&3&C&4&B&4g&x&8&2&D&0&C&3i&x&A&1&D&B&D&2s&x&C&0&E&7&E&1t&x&E&0&F&3&F&0e&x&F&F&F&F&F&Fr;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&4&3&B&8&A&5R&x&2&4&A&C&9&6e&x&4&3&B&8&A&5g&x&6&3&C&4&B&4i&x&8&2&D&0&C&3s&x&A&1&D&B&D&2t&x&C&0&E&7&E&1e&x&E&0&F&3&F&0r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&6&3&C&4&B&4R&x&4&3&B&8&A&5e&x&2&4&A&C&9&6g&x&4&3&B&8&A&5i&x&6&3&C&4&B&4s&x&8&2&D&0&C&3t&x&A&1&D&B&D&2e&x&C&0&E&7&E&1r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&8&2&D&0&C&3R&x&6&3&C&4&B&4e&x&4&3&B&8&A&5g&x&2&4&A&C&9&6i&x&4&3&B&8&A&5s&x&6&3&C&4&B&4t&x&8&2&D&0&C&3e&x&A&1&D&B&D&2r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&A&1&D&B&D&2R&x&8&2&D&0&C&3e&x&6&3&C&4&B&4g&x&4&3&B&8&A&5i&x&2&4&A&C&9&6s&x&4&3&B&8&A&5t&x&6&3&C&4&B&4e&x&8&2&D&0&C&3r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&C&0&E&7&E&1R&x&A&1&D&B&D&2e&x&8&2&D&0&C&3g&x&6&3&C&4&B&4i&x&4&3&B&8&A&5s&x&2&4&A&C&9&6t&x&4&3&B&8&A&5e&x&6&3&C&4&B&4r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&E&0&F&3&F&0R&x&C&0&E&7&E&1e&x&A&1&D&B&D&2g&x&8&2&D&0&C&3i&x&6&3&C&4&B&4s&x&4&3&B&8&A&5t&x&2&4&A&C&9&6e&x&4&3&B&8&A&5r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
+        - "&x&F&F&F&F&F&FR&x&E&0&F&3&F&0e&x&C&0&E&7&E&1g&x&A&1&D&B&D&2i&x&8&2&D&0&C&3s&x&6&3&C&4&B&4t&x&4&3&B&8&A&5e&x&2&4&A&C&9&6r;&fPlease,
+        register with the command: &3/register <password> <confirmPassword>;0;1;0"
   noLogin:
     static:
-      title: "&fLogin;&fPlease, login with the command: &7/login <password>;1;30;1"
+      title: "&eLogin;&fPlease, login with the command: &e/login <password>;1;30;1"
     animated:
       enabled: true
-      interval: 10
+      interval: 1
       loop: true
       titles:
-        - "&aL;&f;0;2;0"
-        - "&fL&ao;&f;0;2;0"
-        - "&fLo&ag;&f;0;2;0"
-        - "&fLog&ai;&f;0;2;0"
-        - "&fLogi&an;&f;0;2;0"
-        - "&fLogin;&f;0;2;0"
-        - "&fLogin;&fPlease, login with the command: &7/login <password>;0;30;0"
+        - "&x&F&6&F&5&C&8L&x&F&F&F&F&F&Fo&x&F&6&F&5&C&8g&x&E&D&E&B&9&1i&x&E&4&E&0&5&An;&fPlease, login with the command: &e/login <password>;0;1;0"
+        - "&x&E&D&E&B&9&1L&x&F&6&F&5&C&8o&x&F&F&F&F&F&Fg&x&F&6&F&5&C&8i&x&E&D&E&B&9&1n;&fPlease, login with the command: &e/login <password>;0;1;0"
+        - "&x&E&4&E&0&5&AL&x&E&D&E&B&9&1o&x&F&6&F&5&C&8g&x&F&F&F&F&F&Fi&x&F&6&F&5&C&8n;&fPlease, login with the command: &e/login <password>;0;1;0"
+        - "&x&D&B&D&6&2&3L&x&E&4&E&0&5&Ao&x&E&D&E&B&9&1g&x&F&6&F&5&C&8i&x&F&F&F&F&F&Fn;&fPlease, login with the command: &e/login <password>;0;1;0"
+        - "&x&E&4&E&0&5&AL&x&D&B&D&6&2&3o&x&E&4&E&0&5&Ag&x&E&D&E&B&9&1i&x&F&6&F&5&C&8n;&fPlease, login with the command: &e/login <password>;0;1;0"
+        - "&x&E&D&E&B&9&1L&x&E&4&E&0&5&Ao&x&D&B&D&6&2&3g&x&E&4&E&0&5&Ai&x&E&D&E&B&9&1n;&fPlease, login with the command: &e/login <password>;0;1;0"
+        - "&x&F&6&F&5&C&8L&x&E&D&E&B&9&1o&x&E&4&E&0&5&Ag&x&D&B&D&6&2&3i&x&E&4&E&0&5&An;&fPlease, login with the command: &e/login <password>;0;1;0"
+        - "&x&F&F&F&F&F&FL&x&F&6&F&5&C&8o&x&E&D&E&B&9&1g&x&E&4&E&0&5&Ai&x&D&B&D&6&2&3n;&fPlease, login with the command: &e/login <password>;0;1;0"
   register:
     static:
-      title: "&aRegistered;&aSuccessfully registered!;1;2;1"
+      title: "&2Registered;&2Successfully registered!;1;2;1"
     animated:
       enabled: true
-      interval: 10
+      interval: 1
       loop: true
       titles:
-        - "&aR;&f;0;2;0"
-        - "&fR&ae;&f;0;2;0"
-        - "&fRe&ag;&f;0;2;0"
-        - "&fReg&ai;&f;0;2;0"
-        - "&fRegi&as;&f;0;2;0"
-        - "&fRegis&at;&f;0;2;0"
-        - "&fRegist&ae;&f;0;2;0"
-        - "&fRegiste&ar;&f;0;2;0"
-        - "&fRegister&ae;&f;0;2;0"
-        - "&fRegistere&ad;&f;0;2;0"
-        - "&aRegistered;&aSuccessfully registered!;1;2;1"
+        - "&x&E&6&E&D&E&6R&x&F&F&F&F&F&Fe&x&E&6&E&D&E&6g&x&C&D&D&C&C&Di&x&B&4&C&A&B&4s&x&9&B&B&8&9&Bt&x&8&1&A&7&8&3e&x&6&8&9&5&6&Ar&x&4&F&8&3&5&1e&x&3&6&7&2&3&8d;&2Successfully registered!;0;1;0"
+        - "&x&C&D&D&C&C&DR&x&E&6&E&D&E&6e&x&F&F&F&F&F&Fg&x&E&6&E&D&E&6i&x&C&D&D&C&C&Ds&x&B&4&C&A&B&4t&x&9&B&B&8&9&Be&x&8&1&A&7&8&3r&x&6&8&9&5&6&Ae&x&4&F&8&3&5&1d;&2Successfully registered!;0;1;0"
+        - "&x&B&4&C&A&B&4R&x&C&D&D&C&C&De&x&E&6&E&D&E&6g&x&F&F&F&F&F&Fi&x&E&6&E&D&E&6s&x&C&D&D&C&C&Dt&x&B&4&C&A&B&4e&x&9&B&B&8&9&Br&x&8&1&A&7&8&3e&x&6&8&9&5&6&Ad;&2Successfully registered!;0;1;0"
+        - "&x&9&B&B&8&9&BR&x&B&4&C&A&B&4e&x&C&D&D&C&C&Dg&x&E&6&E&D&E&6i&x&F&F&F&F&F&Fs&x&E&6&E&D&E&6t&x&C&D&D&C&C&De&x&B&4&C&A&B&4r&x&9&B&B&8&9&Be&x&8&1&A&7&8&3d;&2Successfully registered!;0;1;0"
+        - "&x&8&1&A&7&8&3R&x&9&B&B&8&9&Be&x&B&4&C&A&B&4g&x&C&D&D&C&C&Di&x&E&6&E&D&E&6s&x&F&F&F&F&F&Ft&x&E&6&E&D&E&6e&x&C&D&D&C&C&Dr&x&B&4&C&A&B&4e&x&9&B&B&8&9&Bd;&2Successfully registered!;0;1;0"
+        - "&x&6&8&9&5&6&AR&x&8&1&A&7&8&3e&x&9&B&B&8&9&Bg&x&B&4&C&A&B&4i&x&C&D&D&C&C&Ds&x&E&6&E&D&E&6t&x&F&F&F&F&F&Fe&x&E&6&E&D&E&6r&x&C&D&D&C&C&De&x&B&4&C&A&B&4d;&2Successfully registered!;0;1;0"
+        - "&x&4&F&8&3&5&1R&x&6&8&9&5&6&Ae&x&8&1&A&7&8&3g&x&9&B&B&8&9&Bi&x&B&4&C&A&B&4s&x&C&D&D&C&C&Dt&x&E&6&E&D&E&6e&x&F&F&F&F&F&Fr&x&E&6&E&D&E&6e&x&C&D&D&C&C&Dd;&2Successfully registered!;0;1;0"
+        - "&x&3&6&7&2&3&8R&x&4&F&8&3&5&1e&x&6&8&9&5&6&Ag&x&8&1&A&7&8&3i&x&9&B&B&8&9&Bs&x&B&4&C&A&B&4t&x&C&D&D&C&C&De&x&E&6&E&D&E&6r&x&F&F&F&F&F&Fe&x&E&6&E&D&E&6d;&2Successfully registered!;0;1;0"
+        - "&x&1&D&6&0&1&FR&x&3&6&7&2&3&8e&x&4&F&8&3&5&1g&x&6&8&9&5&6&Ai&x&8&1&A&7&8&3s&x&9&B&B&8&9&Bt&x&B&4&C&A&B&4e&x&C&D&D&C&C&Dr&x&E&6&E&D&E&6e&x&F&F&F&F&F&Fd;&2Successfully registered!;0;1;0"
+        - "&x&3&6&7&2&3&8R&x&1&D&6&0&1&Fe&x&3&6&7&2&3&8g&x&4&F&8&3&5&1i&x&6&8&9&5&6&As&x&8&1&A&7&8&3t&x&9&B&B&8&9&Be&x&B&4&C&A&B&4r&x&C&D&D&C&C&De&x&E&6&E&D&E&6d;&2Successfully registered!;0;1;0"
+        - "&x&4&F&8&3&5&1R&x&3&6&7&2&3&8e&x&1&D&6&0&1&Fg&x&3&6&7&2&3&8i&x&4&F&8&3&5&1s&x&6&8&9&5&6&At&x&8&1&A&7&8&3e&x&9&B&B&8&9&Br&x&B&4&C&A&B&4e&x&C&D&D&C&C&Dd;&2Successfully registered!;0;1;0"
+        - "&x&6&8&9&5&6&AR&x&4&F&8&3&5&1e&x&3&6&7&2&3&8g&x&1&D&6&0&1&Fi&x&3&6&7&2&3&8s&x&4&F&8&3&5&1t&x&6&8&9&5&6&Ae&x&8&1&A&7&8&3r&x&9&B&B&8&9&Be&x&B&4&C&A&B&4d;&2Successfully registered!;0;1;0"
+        - "&x&8&1&A&7&8&3R&x&6&8&9&5&6&Ae&x&4&F&8&3&5&1g&x&3&6&7&2&3&8i&x&1&D&6&0&1&Fs&x&3&6&7&2&3&8t&x&4&F&8&3&5&1e&x&6&8&9&5&6&Ar&x&8&1&A&7&8&3e&x&9&B&B&8&9&Bd;&2Successfully registered!;0;1;0"
+        - "&x&9&B&B&8&9&BR&x&8&1&A&7&8&3e&x&6&8&9&5&6&Ag&x&4&F&8&3&5&1i&x&3&6&7&2&3&8s&x&1&D&6&0&1&Ft&x&3&6&7&2&3&8e&x&4&F&8&3&5&1r&x&6&8&9&5&6&Ae&x&8&1&A&7&8&3d;&2Successfully registered!;0;1;0"
+        - "&x&B&4&C&A&B&4R&x&9&B&B&8&9&Be&x&8&1&A&7&8&3g&x&6&8&9&5&6&Ai&x&4&F&8&3&5&1s&x&3&6&7&2&3&8t&x&1&D&6&0&1&Fe&x&3&6&7&2&3&8r&x&4&F&8&3&5&1e&x&6&8&9&5&6&Ad;&2Successfully registered!;0;1;0"
+        - "&x&C&D&D&C&C&DR&x&B&4&C&A&B&4e&x&9&B&B&8&9&Bg&x&8&1&A&7&8&3i&x&6&8&9&5&6&As&x&4&F&8&3&5&1t&x&3&6&7&2&3&8e&x&1&D&6&0&1&Fr&x&3&6&7&2&3&8e&x&4&F&8&3&5&1d;&2Successfully registered!;0;1;0"
+        - "&x&E&6&E&D&E&6R&x&C&D&D&C&C&De&x&B&4&C&A&B&4g&x&9&B&B&8&9&Bi&x&8&1&A&7&8&3s&x&6&8&9&5&6&At&x&4&F&8&3&5&1e&x&3&6&7&2&3&8r&x&1&D&6&0&1&Fe&x&3&6&7&2&3&8d;&2Successfully registered!;0;1;0"
+        - "&x&F&F&F&F&F&FR&x&E&6&E&D&E&6e&x&C&D&D&C&C&Dg&x&B&4&C&A&B&4i&x&9&B&B&8&9&Bs&x&8&1&A&7&8&3t&x&6&8&9&5&6&Ae&x&4&F&8&3&5&1r&x&3&6&7&2&3&8e&x&1&D&6&0&1&Fd;&2Successfully registered!;0;1;0"
   login:
     static:
       title: "&aLogin;&aSuccessful login;1;2;1"
     animated:
       enabled: true
-      interval: 10
+      interval: 1
       loop: true
       titles:
-        - "&2L;&f;0;2;0"
-        - "&fL&ao;&f;0;2;0"
-        - "&fLo&ag;&f;0;2;0"
-        - "&fLog&ai;&f;0;2;0"
-        - "&fLogi&an;&f;0;2;0"
-        - "&fLogin;&f;0;2;0"
-        - "&aLogin;&aSuccessful login;0;4;0"
+        - "&x&C&8&F&F&B&FL&x&F&F&F&F&F&Fo&x&C&8&F&F&B&Fg&x&9&1&F&F&8&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
+        - "&x&9&1&F&F&8&0L&x&C&8&F&F&B&Fo&x&F&F&F&F&F&Fg&x&C&8&F&F&B&Fi&x&9&1&F&F&8&0n;&aSuccessful login;0;1;0"
+        - "&x&5&9&F&F&4&0L&x&9&1&F&F&8&0o&x&C&8&F&F&B&Fg&x&F&F&F&F&F&Fi&x&C&8&F&F&B&Fn;&aSuccessful login;0;1;0"
+        - "&x&2&2&F&F&0&0L&x&5&9&F&F&4&0o&x&9&1&F&F&8&0g&x&C&8&F&F&B&Fi&x&F&F&F&F&F&Fn;&aSuccessful login;0;1;0"
+        - "&x&5&9&F&F&4&0L&x&2&2&F&F&0&0o&x&5&9&F&F&4&0g&x&9&1&F&F&8&0i&x&C&8&F&F&B&Fn;&aSuccessful login;0;1;0"
+        - "&x&9&1&F&F&8&0L&x&5&9&F&F&4&0o&x&2&2&F&F&0&0g&x&5&9&F&F&4&0i&x&9&1&F&F&8&0n;&aSuccessful login;0;1;0"
+        - "&x&C&8&F&F&B&FL&x&9&1&F&F&8&0o&x&5&9&F&F&4&0g&x&2&2&F&F&0&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
+        - "&x&F&F&F&F&F&FL&x&C&8&F&F&B&Fo&x&9&1&F&F&8&0g&x&5&9&F&F&4&0i&x&2&2&F&F&0&0n;&aSuccessful login;0;1;0"
+        - "&x&C&8&F&F&B&FL&x&F&F&F&F&F&Fo&x&C&8&F&F&B&Fg&x&9&1&F&F&8&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
+        - "&x&9&1&F&F&8&0L&x&C&8&F&F&B&Fo&x&F&F&F&F&F&Fg&x&C&8&F&F&B&Fi&x&9&1&F&F&8&0n;&aSuccessful login;0;1;0"
+        - "&x&5&9&F&F&4&0L&x&9&1&F&F&8&0o&x&C&8&F&F&B&Fg&x&F&F&F&F&F&Fi&x&C&8&F&F&B&Fn;&aSuccessful login;0;1;0"
+        - "&x&2&2&F&F&0&0L&x&5&9&F&F&4&0o&x&9&1&F&F&8&0g&x&C&8&F&F&B&Fi&x&F&F&F&F&F&Fn;&aSuccessful login;0;1;0"
+        - "&x&5&9&F&F&4&0L&x&2&2&F&F&0&0o&x&5&9&F&F&4&0g&x&9&1&F&F&8&0i&x&C&8&F&F&B&Fn;&aSuccessful login;0;1;0"
+        - "&x&9&1&F&F&8&0L&x&5&9&F&F&4&0o&x&2&2&F&F&0&0g&x&5&9&F&F&4&0i&x&9&1&F&F&8&0n;&aSuccessful login;0;1;0"
+        - "&x&C&8&F&F&B&FL&x&9&1&F&F&8&0o&x&5&9&F&F&4&0g&x&2&2&F&F&0&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
+        - "&x&F&F&F&F&F&FL&x&C&8&F&F&B&Fo&x&9&1&F&F&8&0g&x&5&9&F&F&4&0i&x&2&2&F&F&0&0n;&aSuccessful login;0;1;0"
+        - "&x&C&8&F&F&B&FL&x&F&F&F&F&F&Fo&x&C&8&F&F&B&Fg&x&9&1&F&F&8&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
+        - "&x&9&1&F&F&8&0L&x&C&8&F&F&B&Fo&x&F&F&F&F&F&Fg&x&C&8&F&F&B&Fi&x&9&1&F&F&8&0n;&aSuccessful login;0;1;0"
+        - "&x&5&9&F&F&4&0L&x&9&1&F&F&8&0o&x&C&8&F&F&B&Fg&x&F&F&F&F&F&Fi&x&C&8&F&F&B&Fn;&aSuccessful login;0;1;0"
+        - "&x&2&2&F&F&0&0L&x&5&9&F&F&4&0o&x&9&1&F&F&8&0g&x&C&8&F&F&B&Fi&x&F&F&F&F&F&Fn;&aSuccessful login;0;1;0"
+        - "&x&5&9&F&F&4&0L&x&2&2&F&F&0&0o&x&5&9&F&F&4&0g&x&9&1&F&F&8&0i&x&C&8&F&F&B&Fn;&aSuccessful login;0;1;0"
+        - "&x&9&1&F&F&8&0L&x&5&9&F&F&4&0o&x&2&2&F&F&0&0g&x&5&9&F&F&4&0i&x&9&1&F&F&8&0n;&aSuccessful login;0;1;0"
+        - "&x&C&8&F&F&B&FL&x&9&1&F&F&8&0o&x&5&9&F&F&4&0g&x&2&2&F&F&0&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
+        - "&x&F&F&F&F&F&FL&x&C&8&F&F&B&Fo&x&9&1&F&F&8&0g&x&5&9&F&F&4&0i&x&2&2&F&F&0&0n;&aSuccessful login;0;1;0"
+        - "&x&C&8&F&F&B&FL&x&F&F&F&F&F&Fo&x&C&8&F&F&B&Fg&x&9&1&F&F&8&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
+        - "&x&9&1&F&F&8&0L&x&C&8&F&F&B&Fo&x&F&F&F&F&F&Fg&x&C&8&F&F&B&Fi&x&9&1&F&F&8&0n;&aSuccessful login;0;1;0"
+        - "&x&5&9&F&F&4&0L&x&9&1&F&F&8&0o&x&C&8&F&F&B&Fg&x&F&F&F&F&F&Fi&x&C&8&F&F&B&Fn;&aSuccessful login;0;1;0"
+        - "&x&2&2&F&F&0&0L&x&5&9&F&F&4&0o&x&9&1&F&F&8&0g&x&C&8&F&F&B&Fi&x&F&F&F&F&F&Fn;&aSuccessful login;0;1;0"
+        - "&x&5&9&F&F&4&0L&x&2&2&F&F&0&0o&x&5&9&F&F&4&0g&x&9&1&F&F&8&0i&x&C&8&F&F&B&Fn;&aSuccessful login;0;1;0"
+        - "&x&9&1&F&F&8&0L&x&5&9&F&F&4&0o&x&2&2&F&F&0&0g&x&5&9&F&F&4&0i&x&9&1&F&F&8&0n;&aSuccessful login;0;1;0"
+        - "&x&C&8&F&F&B&FL&x&9&1&F&F&8&0o&x&5&9&F&F&4&0g&x&2&2&F&F&0&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
+        - "&x&F&F&F&F&F&FL&x&C&8&F&F&B&Fo&x&9&1&F&F&8&0g&x&5&9&F&F&4&0i&x&2&2&F&F&0&0n;&aSuccessful login;0;1;0"
   sessionRestored:
     static:
-      title: "&aSession Restored;&aSuccessful login;1;2;1"
+      title: "&6Session Restored;&6Successful login;1;2;1"
     animated:
       enabled: true
-      interval: 10
+      interval: 1
       loop: true
       titles:
-        - "&aSession &eRestored;&aSuccessful login;1;2;1"
-        - "&eSession &aRestored;&aSuccessful login;1;2;1"
-        - "&aSession &eRestored;&aSuccessful login;1;2;1"
-        - "&eSession &aRestored;&aSuccessful login;1;2;1"
+        - "&x&F&F&F&A&E&ES&x&F&F&F&F&F&Fe&x&F&F&F&A&E&Es&x&F&F&F&4&D&Ds&x&F&F&E&F&C&Ci&x&F&F&E&A&B&Bo&x&F&F&E&5&A&An &x&F&F&D&F&9&9R&x&F&F&D&A&8&8e&x&F&F&D&5&7&7s&x&F&F&D&0&6&6t&x&F&F&C&A&5&5o&x&F&F&C&5&4&4r&x&F&F&C&0&3&3e&x&F&F&B&B&2&2d;&6Successful login;0;1;0"
+        - "&x&F&F&F&4&D&DS&x&F&F&F&A&E&Ee&x&F&F&F&F&F&Fs&x&F&F&F&A&E&Es&x&F&F&F&4&D&Di&x&F&F&E&F&C&Co&x&F&F&E&A&B&Bn &x&F&F&E&5&A&AR&x&F&F&D&F&9&9e&x&F&F&D&A&8&8s&x&F&F&D&5&7&7t&x&F&F&D&0&6&6o&x&F&F&C&A&5&5r&x&F&F&C&5&4&4e&x&F&F&C&0&3&3d;&6Successful login;0;1;0"
+        - "&x&F&F&E&F&C&CS&x&F&F&F&4&D&De&x&F&F&F&A&E&Es&x&F&F&F&F&F&Fs&x&F&F&F&A&E&Ei&x&F&F&F&4&D&Do&x&F&F&E&F&C&Cn &x&F&F&E&A&B&BR&x&F&F&E&5&A&Ae&x&F&F&D&F&9&9s&x&F&F&D&A&8&8t&x&F&F&D&5&7&7o&x&F&F&D&0&6&6r&x&F&F&C&A&5&5e&x&F&F&C&5&4&4d;&6Successful login;0;1;0"
+        - "&x&F&F&E&A&B&BS&x&F&F&E&F&C&Ce&x&F&F&F&4&D&Ds&x&F&F&F&A&E&Es&x&F&F&F&F&F&Fi&x&F&F&F&A&E&Eo&x&F&F&F&4&D&Dn &x&F&F&E&F&C&CR&x&F&F&E&A&B&Be&x&F&F&E&5&A&As&x&F&F&D&F&9&9t&x&F&F&D&A&8&8o&x&F&F&D&5&7&7r&x&F&F&D&0&6&6e&x&F&F&C&A&5&5d;&6Successful login;0;1;0"
+        - "&x&F&F&E&5&A&AS&x&F&F&E&A&B&Be&x&F&F&E&F&C&Cs&x&F&F&F&4&D&Ds&x&F&F&F&A&E&Ei&x&F&F&F&F&F&Fo&x&F&F&F&A&E&En &x&F&F&F&4&D&DR&x&F&F&E&F&C&Ce&x&F&F&E&A&B&Bs&x&F&F&E&5&A&At&x&F&F&D&F&9&9o&x&F&F&D&A&8&8r&x&F&F&D&5&7&7e&x&F&F&D&0&6&6d;&6Successful login;0;1;0"
+        - "&x&F&F&D&F&9&9S&x&F&F&E&5&A&Ae&x&F&F&E&A&B&Bs&x&F&F&E&F&C&Cs&x&F&F&F&4&D&Di&x&F&F&F&A&E&Eo&x&F&F&F&F&F&Fn &x&F&F&F&A&E&ER&x&F&F&F&4&D&De&x&F&F&E&F&C&Cs&x&F&F&E&A&B&Bt&x&F&F&E&5&A&Ao&x&F&F&D&F&9&9r&x&F&F&D&A&8&8e&x&F&F&D&5&7&7d;&6Successful login;0;1;0"
+        - "&x&F&F&D&A&8&8S&x&F&F&D&F&9&9e&x&F&F&E&5&A&As&x&F&F&E&A&B&Bs&x&F&F&E&F&C&Ci&x&F&F&F&4&D&Do&x&F&F&F&A&E&En &x&F&F&F&F&F&FR&x&F&F&F&A&E&Ee&x&F&F&F&4&D&Ds&x&F&F&E&F&C&Ct&x&F&F&E&A&B&Bo&x&F&F&E&5&A&Ar&x&F&F&D&F&9&9e&x&F&F&D&A&8&8d;&6Successful login;0;1;0"
+        - "&x&F&F&D&5&7&7S&x&F&F&D&A&8&8e&x&F&F&D&F&9&9s&x&F&F&E&5&A&As&x&F&F&E&A&B&Bi&x&F&F&E&F&C&Co&x&F&F&F&4&D&Dn &x&F&F&F&A&E&ER&x&F&F&F&F&F&Fe&x&F&F&F&A&E&Es&x&F&F&F&4&D&Dt&x&F&F&E&F&C&Co&x&F&F&E&A&B&Br&x&F&F&E&5&A&Ae&x&F&F&D&F&9&9d;&6Successful login;0;1;0"
+        - "&x&F&F&D&0&6&6S&x&F&F&D&5&7&7e&x&F&F&D&A&8&8s&x&F&F&D&F&9&9s&x&F&F&E&5&A&Ai&x&F&F&E&A&B&Bo&x&F&F&E&F&C&Cn &x&F&F&F&4&D&DR&x&F&F&F&A&E&Ee&x&F&F&F&F&F&Fs&x&F&F&F&A&E&Et&x&F&F&F&4&D&Do&x&F&F&E&F&C&Cr&x&F&F&E&A&B&Be&x&F&F&E&5&A&Ad;&6Successful login;0;1;0"
+        - "&x&F&F&C&A&5&5S&x&F&F&D&0&6&6e&x&F&F&D&5&7&7s&x&F&F&D&A&8&8s&x&F&F&D&F&9&9i&x&F&F&E&5&A&Ao&x&F&F&E&A&B&Bn &x&F&F&E&F&C&CR&x&F&F&F&4&D&De&x&F&F&F&A&E&Es&x&F&F&F&F&F&Ft&x&F&F&F&A&E&Eo&x&F&F&F&4&D&Dr&x&F&F&E&F&C&Ce&x&F&F&E&A&B&Bd;&6Successful login;0;1;0"
+        - "&x&F&F&C&5&4&4S&x&F&F&C&A&5&5e&x&F&F&D&0&6&6s&x&F&F&D&5&7&7s&x&F&F&D&A&8&8i&x&F&F&D&F&9&9o&x&F&F&E&5&A&An &x&F&F&E&A&B&BR&x&F&F&E&F&C&Ce&x&F&F&F&4&D&Ds&x&F&F&F&A&E&Et&x&F&F&F&F&F&Fo&x&F&F&F&A&E&Er&x&F&F&F&4&D&De&x&F&F&E&F&C&Cd;&6Successful login;0;1;0"
+        - "&x&F&F&C&0&3&3S&x&F&F&C&5&4&4e&x&F&F&C&A&5&5s&x&F&F&D&0&6&6s&x&F&F&D&5&7&7i&x&F&F&D&A&8&8o&x&F&F&D&F&9&9n &x&F&F&E&5&A&AR&x&F&F&E&A&B&Be&x&F&F&E&F&C&Cs&x&F&F&F&4&D&Dt&x&F&F&F&A&E&Eo&x&F&F&F&F&F&Fr&x&F&F&F&A&E&Ee&x&F&F&F&4&D&Dd;&6Successful login;0;1;0"
+        - "&x&F&F&B&B&2&2S&x&F&F&C&0&3&3e&x&F&F&C&5&4&4s&x&F&F&C&A&5&5s&x&F&F&D&0&6&6i&x&F&F&D&5&7&7o&x&F&F&D&A&8&8n &x&F&F&D&F&9&9R&x&F&F&E&5&A&Ae&x&F&F&E&A&B&Bs&x&F&F&E&F&C&Ct&x&F&F&F&4&D&Do&x&F&F&F&A&E&Er&x&F&F&F&F&F&Fe&x&F&F&F&A&E&Ed;&6Successful login;0;1;0"
+        - "&x&F&F&B&5&1&1S&x&F&F&B&B&2&2e&x&F&F&C&0&3&3s&x&F&F&C&5&4&4s&x&F&F&C&A&5&5i&x&F&F&D&0&6&6o&x&F&F&D&5&7&7n &x&F&F&D&A&8&8R&x&F&F&D&F&9&9e&x&F&F&E&5&A&As&x&F&F&E&A&B&Bt&x&F&F&E&F&C&Co&x&F&F&F&4&D&Dr&x&F&F&F&A&E&Ee&x&F&F&F&F&F&Fd;&6Successful login;0;1;0"
+        - "&x&F&F&B&0&0&0S&x&F&F&B&5&1&1e&x&F&F&B&B&2&2s&x&F&F&C&0&3&3s&x&F&F&C&5&4&4i&x&F&F&C&A&5&5o&x&F&F&D&0&6&6n &x&F&F&D&5&7&7R&x&F&F&D&A&8&8e&x&F&F&D&F&9&9s&x&F&F&E&5&A&At&x&F&F&E&A&B&Bo&x&F&F&E&F&C&Cr&x&F&F&F&4&D&De&x&F&F&F&A&E&Ed;&6Successful login;0;1;0"
+        - "&x&F&F&B&5&1&1S&x&F&F&B&0&0&0e&x&F&F&B&5&1&1s&x&F&F&B&B&2&2s&x&F&F&C&0&3&3i&x&F&F&C&5&4&4o&x&F&F&C&A&5&5n &x&F&F&D&0&6&6R&x&F&F&D&5&7&7e&x&F&F&D&A&8&8s&x&F&F&D&F&9&9t&x&F&F&E&5&A&Ao&x&F&F&E&A&B&Br&x&F&F&E&F&C&Ce&x&F&F&F&4&D&Dd;&6Successful login;0;1;0"
+        - "&x&F&F&B&B&2&2S&x&F&F&B&5&1&1e&x&F&F&B&0&0&0s&x&F&F&B&5&1&1s&x&F&F&B&B&2&2i&x&F&F&C&0&3&3o&x&F&F&C&5&4&4n &x&F&F&C&A&5&5R&x&F&F&D&0&6&6e&x&F&F&D&5&7&7s&x&F&F&D&A&8&8t&x&F&F&D&F&9&9o&x&F&F&E&5&A&Ar&x&F&F&E&A&B&Be&x&F&F&E&F&C&Cd;&6Successful login;0;1;0"
+        - "&x&F&F&C&0&3&3S&x&F&F&B&B&2&2e&x&F&F&B&5&1&1s&x&F&F&B&0&0&0s&x&F&F&B&5&1&1i&x&F&F&B&B&2&2o&x&F&F&C&0&3&3n &x&F&F&C&5&4&4R&x&F&F&C&A&5&5e&x&F&F&D&0&6&6s&x&F&F&D&5&7&7t&x&F&F&D&A&8&8o&x&F&F&D&F&9&9r&x&F&F&E&5&A&Ae&x&F&F&E&A&B&Bd;&6Successful login;0;1;0"
+        - "&x&F&F&C&5&4&4S&x&F&F&C&0&3&3e&x&F&F&B&B&2&2s&x&F&F&B&5&1&1s&x&F&F&B&0&0&0i&x&F&F&B&5&1&1o&x&F&F&B&B&2&2n &x&F&F&C&0&3&3R&x&F&F&C&5&4&4e&x&F&F&C&A&5&5s&x&F&F&D&0&6&6t&x&F&F&D&5&7&7o&x&F&F&D&A&8&8r&x&F&F&D&F&9&9e&x&F&F&E&5&A&Ad;&6Successful login;0;1;0"
+        - "&x&F&F&C&A&5&5S&x&F&F&C&5&4&4e&x&F&F&C&0&3&3s&x&F&F&B&B&2&2s&x&F&F&B&5&1&1i&x&F&F&B&0&0&0o&x&F&F&B&5&1&1n &x&F&F&B&B&2&2R&x&F&F&C&0&3&3e&x&F&F&C&5&4&4s&x&F&F&C&A&5&5t&x&F&F&D&0&6&6o&x&F&F&D&5&7&7r&x&F&F&D&A&8&8e&x&F&F&D&F&9&9d;&6Successful login;0;1;0"
+        - "&x&F&F&D&0&6&6S&x&F&F&C&A&5&5e&x&F&F&C&5&4&4s&x&F&F&C&0&3&3s&x&F&F&B&B&2&2i&x&F&F&B&5&1&1o&x&F&F&B&0&0&0n &x&F&F&B&5&1&1R&x&F&F&B&B&2&2e&x&F&F&C&0&3&3s&x&F&F&C&5&4&4t&x&F&F&C&A&5&5o&x&F&F&D&0&6&6r&x&F&F&D&5&7&7e&x&F&F&D&A&8&8d;&6Successful login;0;1;0"
+        - "&x&F&F&D&5&7&7S&x&F&F&D&0&6&6e&x&F&F&C&A&5&5s&x&F&F&C&5&4&4s&x&F&F&C&0&3&3i&x&F&F&B&B&2&2o&x&F&F&B&5&1&1n &x&F&F&B&0&0&0R&x&F&F&B&5&1&1e&x&F&F&B&B&2&2s&x&F&F&C&0&3&3t&x&F&F&C&5&4&4o&x&F&F&C&A&5&5r&x&F&F&D&0&6&6e&x&F&F&D&5&7&7d;&6Successful login;0;1;0"
+        - "&x&F&F&D&A&8&8S&x&F&F&D&5&7&7e&x&F&F&D&0&6&6s&x&F&F&C&A&5&5s&x&F&F&C&5&4&4i&x&F&F&C&0&3&3o&x&F&F&B&B&2&2n &x&F&F&B&5&1&1R&x&F&F&B&0&0&0e&x&F&F&B&5&1&1s&x&F&F&B&B&2&2t&x&F&F&C&0&3&3o&x&F&F&C&5&4&4r&x&F&F&C&A&5&5e&x&F&F&D&0&6&6d;&6Successful login;0;1;0"
+        - "&x&F&F&D&F&9&9S&x&F&F&D&A&8&8e&x&F&F&D&5&7&7s&x&F&F&D&0&6&6s&x&F&F&C&A&5&5i&x&F&F&C&5&4&4o&x&F&F&C&0&3&3n &x&F&F&B&B&2&2R&x&F&F&B&5&1&1e&x&F&F&B&0&0&0s&x&F&F&B&5&1&1t&x&F&F&B&B&2&2o&x&F&F&C&0&3&3r&x&F&F&C&5&4&4e&x&F&F&C&A&5&5d;&6Successful login;0;1;0"
+        - "&x&F&F&E&5&A&AS&x&F&F&D&F&9&9e&x&F&F&D&A&8&8s&x&F&F&D&5&7&7s&x&F&F&D&0&6&6i&x&F&F&C&A&5&5o&x&F&F&C&5&4&4n &x&F&F&C&0&3&3R&x&F&F&B&B&2&2e&x&F&F&B&5&1&1s&x&F&F&B&0&0&0t&x&F&F&B&5&1&1o&x&F&F&B&B&2&2r&x&F&F&C&0&3&3e&x&F&F&C&5&4&4d;&6Successful login;0;1;0"
+        - "&x&F&F&E&A&B&BS&x&F&F&E&5&A&Ae&x&F&F&D&F&9&9s&x&F&F&D&A&8&8s&x&F&F&D&5&7&7i&x&F&F&D&0&6&6o&x&F&F&C&A&5&5n &x&F&F&C&5&4&4R&x&F&F&C&0&3&3e&x&F&F&B&B&2&2s&x&F&F&B&5&1&1t&x&F&F&B&0&0&0o&x&F&F&B&5&1&1r&x&F&F&B&B&2&2e&x&F&F&C&0&3&3d;&6Successful login;0;1;0"
+        - "&x&F&F&E&F&C&CS&x&F&F&E&A&B&Be&x&F&F&E&5&A&As&x&F&F&D&F&9&9s&x&F&F&D&A&8&8i&x&F&F&D&5&7&7o&x&F&F&D&0&6&6n &x&F&F&C&A&5&5R&x&F&F&C&5&4&4e&x&F&F&C&0&3&3s&x&F&F&B&B&2&2t&x&F&F&B&5&1&1o&x&F&F&B&0&0&0r&x&F&F&B&5&1&1e&x&F&F&B&B&2&2d;&6Successful login;0;1;0"
+        - "&x&F&F&F&4&D&DS&x&F&F&E&F&C&Ce&x&F&F&E&A&B&Bs&x&F&F&E&5&A&As&x&F&F&D&F&9&9i&x&F&F&D&A&8&8o&x&F&F&D&5&7&7n &x&F&F&D&0&6&6R&x&F&F&C&A&5&5e&x&F&F&C&5&4&4s&x&F&F&C&0&3&3t&x&F&F&B&B&2&2o&x&F&F&B&5&1&1r&x&F&F&B&0&0&0e&x&F&F&B&5&1&1d;&6Successful login;0;1;0"
+        - "&x&F&F&F&A&E&ES&x&F&F&F&4&D&De&x&F&F&E&F&C&Cs&x&F&F&E&A&B&Bs&x&F&F&E&5&A&Ai&x&F&F&D&F&9&9o&x&F&F&D&A&8&8n &x&F&F&D&5&7&7R&x&F&F&D&0&6&6e&x&F&F&C&A&5&5s&x&F&F&C&5&4&4t&x&F&F&C&0&3&3o&x&F&F&B&B&2&2r&x&F&F&B&5&1&1e&x&F&F&B&0&0&0d;&6Successful login;0;1;0"
+        - "&x&F&F&F&F&F&FS&x&F&F&F&A&E&Ee&x&F&F&F&4&D&Ds&x&F&F&E&F&C&Cs&x&F&F&E&A&B&Bi&x&F&F&E&5&A&Ao&x&F&F&D&F&9&9n &x&F&F&D&A&8&8R&x&F&F&D&5&7&7e&x&F&F&D&0&6&6s&x&F&F&C&A&5&5t&x&F&F&C&5&4&4o&x&F&F&C&0&3&3r&x&F&F&B&B&2&2e&x&F&F&B&5&1&1d;&6Successful login;0;1;0"
+        - "&x&F&F&F&A&E&ES&x&F&F&F&F&F&Fe&x&F&F&F&A&E&Es&x&F&F&F&4&D&Ds&x&F&F&E&F&C&Ci&x&F&F&E&A&B&Bo&x&F&F&E&5&A&An &x&F&F&D&F&9&9R&x&F&F&D&A&8&8e&x&F&F&D&5&7&7s&x&F&F&D&0&6&6t&x&F&F&C&A&5&5o&x&F&F&C&5&4&4r&x&F&F&C&0&3&3e&x&F&F&B&B&2&2d;&6Successful login;0;1;0"
+        - "&x&F&F&F&4&D&DS&x&F&F&F&A&E&Ee&x&F&F&F&F&F&Fs&x&F&F&F&A&E&Es&x&F&F&F&4&D&Di&x&F&F&E&F&C&Co&x&F&F&E&A&B&Bn &x&F&F&E&5&A&AR&x&F&F&D&F&9&9e&x&F&F&D&A&8&8s&x&F&F&D&5&7&7t&x&F&F&D&0&6&6o&x&F&F&C&A&5&5r&x&F&F&C&5&4&4e&x&F&F&C&0&3&3d;&6Successful login;0;1;0"
+        - "&x&F&F&E&F&C&CS&x&F&F&F&4&D&De&x&F&F&F&A&E&Es&x&F&F&F&F&F&Fs&x&F&F&F&A&E&Ei&x&F&F&F&4&D&Do&x&F&F&E&F&C&Cn &x&F&F&E&A&B&BR&x&F&F&E&5&A&Ae&x&F&F&D&F&9&9s&x&F&F&D&A&8&8t&x&F&F&D&5&7&7o&x&F&F&D&0&6&6r&x&F&F&C&A&5&5e&x&F&F&C&5&4&4d;&6Successful login;0;1;0"
+        - "&x&F&F&E&A&B&BS&x&F&F&E&F&C&Ce&x&F&F&F&4&D&Ds&x&F&F&F&A&E&Es&x&F&F&F&F&F&Fi&x&F&F&F&A&E&Eo&x&F&F&F&4&D&Dn &x&F&F&E&F&C&CR&x&F&F&E&A&B&Be&x&F&F&E&5&A&As&x&F&F&D&F&9&9t&x&F&F&D&A&8&8o&x&F&F&D&5&7&7r&x&F&F&D&0&6&6e&x&F&F&C&A&5&5d;&6Successful login;0;1;0"
+        - "&x&F&F&E&5&A&AS&x&F&F&E&A&B&Be&x&F&F&E&F&C&Cs&x&F&F&F&4&D&Ds&x&F&F&F&A&E&Ei&x&F&F&F&F&F&Fo&x&F&F&F&A&E&En &x&F&F&F&4&D&DR&x&F&F&E&F&C&Ce&x&F&F&E&A&B&Bs&x&F&F&E&5&A&At&x&F&F&D&F&9&9o&x&F&F&D&A&8&8r&x&F&F&D&5&7&7e&x&F&F&D&0&6&6d;&6Successful login;0;1;0"
+        - "&x&F&F&D&F&9&9S&x&F&F&E&5&A&Ae&x&F&F&E&A&B&Bs&x&F&F&E&F&C&Cs&x&F&F&F&4&D&Di&x&F&F&F&A&E&Eo&x&F&F&F&F&F&Fn &x&F&F&F&A&E&ER&x&F&F&F&4&D&De&x&F&F&E&F&C&Cs&x&F&F&E&A&B&Bt&x&F&F&E&5&A&Ao&x&F&F&D&F&9&9r&x&F&F&D&A&8&8e&x&F&F&D&5&7&7d;&6Successful login;0;1;0"
+        - "&x&F&F&D&A&8&8S&x&F&F&D&F&9&9e&x&F&F&E&5&A&As&x&F&F&E&A&B&Bs&x&F&F&E&F&C&Ci&x&F&F&F&4&D&Do&x&F&F&F&A&E&En &x&F&F&F&F&F&FR&x&F&F&F&A&E&Ee&x&F&F&F&4&D&Ds&x&F&F&E&F&C&Ct&x&F&F&E&A&B&Bo&x&F&F&E&5&A&Ar&x&F&F&D&F&9&9e&x&F&F&D&A&8&8d;&6Successful login;0;1;0"
+        - "&x&F&F&D&5&7&7S&x&F&F&D&A&8&8e&x&F&F&D&F&9&9s&x&F&F&E&5&A&As&x&F&F&E&A&B&Bi&x&F&F&E&F&C&Co&x&F&F&F&4&D&Dn &x&F&F&F&A&E&ER&x&F&F&F&F&F&Fe&x&F&F&F&A&E&Es&x&F&F&F&4&D&Dt&x&F&F&E&F&C&Co&x&F&F&E&A&B&Br&x&F&F&E&5&A&Ae&x&F&F&D&F&9&9d;&6Successful login;0;1;0"
+        - "&x&F&F&D&0&6&6S&x&F&F&D&5&7&7e&x&F&F&D&A&8&8s&x&F&F&D&F&9&9s&x&F&F&E&5&A&Ai&x&F&F&E&A&B&Bo&x&F&F&E&F&C&Cn &x&F&F&F&4&D&DR&x&F&F&F&A&E&Ee&x&F&F&F&F&F&Fs&x&F&F&F&A&E&Et&x&F&F&F&4&D&Do&x&F&F&E&F&C&Cr&x&F&F&E&A&B&Be&x&F&F&E&5&A&Ad;&6Successful login;0;1;0"
+        - "&x&F&F&C&A&5&5S&x&F&F&D&0&6&6e&x&F&F&D&5&7&7s&x&F&F&D&A&8&8s&x&F&F&D&F&9&9i&x&F&F&E&5&A&Ao&x&F&F&E&A&B&Bn &x&F&F&E&F&C&CR&x&F&F&F&4&D&De&x&F&F&F&A&E&Es&x&F&F&F&F&F&Ft&x&F&F&F&A&E&Eo&x&F&F&F&4&D&Dr&x&F&F&E&F&C&Ce&x&F&F&E&A&B&Bd;&6Successful login;0;1;0"
+        - "&x&F&F&C&5&4&4S&x&F&F&C&A&5&5e&x&F&F&D&0&6&6s&x&F&F&D&5&7&7s&x&F&F&D&A&8&8i&x&F&F&D&F&9&9o&x&F&F&E&5&A&An &x&F&F&E&A&B&BR&x&F&F&E&F&C&Ce&x&F&F&F&4&D&Ds&x&F&F&F&A&E&Et&x&F&F&F&F&F&Fo&x&F&F&F&A&E&Er&x&F&F&F&4&D&De&x&F&F&E&F&C&Cd;&6Successful login;0;1;0"
+        - "&x&F&F&C&0&3&3S&x&F&F&C&5&4&4e&x&F&F&C&A&5&5s&x&F&F&D&0&6&6s&x&F&F&D&5&7&7i&x&F&F&D&A&8&8o&x&F&F&D&F&9&9n &x&F&F&E&5&A&AR&x&F&F&E&A&B&Be&x&F&F&E&F&C&Cs&x&F&F&F&4&D&Dt&x&F&F&F&A&E&Eo&x&F&F&F&F&F&Fr&x&F&F&F&A&E&Ee&x&F&F&F&4&D&Dd;&6Successful login;0;1;0"
+        - "&x&F&F&B&B&2&2S&x&F&F&C&0&3&3e&x&F&F&C&5&4&4s&x&F&F&C&A&5&5s&x&F&F&D&0&6&6i&x&F&F&D&5&7&7o&x&F&F&D&A&8&8n &x&F&F&D&F&9&9R&x&F&F&E&5&A&Ae&x&F&F&E&A&B&Bs&x&F&F&E&F&C&Ct&x&F&F&F&4&D&Do&x&F&F&F&A&E&Er&x&F&F&F&F&F&Fe&x&F&F&F&A&E&Ed;&6Successful login;0;1;0"
+        - "&x&F&F&B&5&1&1S&x&F&F&B&B&2&2e&x&F&F&C&0&3&3s&x&F&F&C&5&4&4s&x&F&F&C&A&5&5i&x&F&F&D&0&6&6o&x&F&F&D&5&7&7n &x&F&F&D&A&8&8R&x&F&F&D&F&9&9e&x&F&F&E&5&A&As&x&F&F&E&A&B&Bt&x&F&F&E&F&C&Co&x&F&F&F&4&D&Dr&x&F&F&F&A&E&Ee&x&F&F&F&F&F&Fd;&6Successful login;0;1;0"
+        - "&x&F&F&B&0&0&0S&x&F&F&B&5&1&1e&x&F&F&B&B&2&2s&x&F&F&C&0&3&3s&x&F&F&C&5&4&4i&x&F&F&C&A&5&5o&x&F&F&D&0&6&6n &x&F&F&D&5&7&7R&x&F&F&D&A&8&8e&x&F&F&D&F&9&9s&x&F&F&E&5&A&At&x&F&F&E&A&B&Bo&x&F&F&E&F&C&Cr&x&F&F&F&4&D&De&x&F&F&F&A&E&Ed;&6Successful login;0;1;0"
+        - "&x&F&F&B&5&1&1S&x&F&F&B&0&0&0e&x&F&F&B&5&1&1s&x&F&F&B&B&2&2s&x&F&F&C&0&3&3i&x&F&F&C&5&4&4o&x&F&F&C&A&5&5n &x&F&F&D&0&6&6R&x&F&F&D&5&7&7e&x&F&F&D&A&8&8s&x&F&F&D&F&9&9t&x&F&F&E&5&A&Ao&x&F&F&E&A&B&Br&x&F&F&E&F&C&Ce&x&F&F&F&4&D&Dd;&6Successful login;0;1;0"
+        - "&x&F&F&B&B&2&2S&x&F&F&B&5&1&1e&x&F&F&B&0&0&0s&x&F&F&B&5&1&1s&x&F&F&B&B&2&2i&x&F&F&C&0&3&3o&x&F&F&C&5&4&4n &x&F&F&C&A&5&5R&x&F&F&D&0&6&6e&x&F&F&D&5&7&7s&x&F&F&D&A&8&8t&x&F&F&D&F&9&9o&x&F&F&E&5&A&Ar&x&F&F&E&A&B&Be&x&F&F&E&F&C&Cd;&6Successful login;0;1;0"
+        - "&x&F&F&C&0&3&3S&x&F&F&B&B&2&2e&x&F&F&B&5&1&1s&x&F&F&B&0&0&0s&x&F&F&B&5&1&1i&x&F&F&B&B&2&2o&x&F&F&C&0&3&3n &x&F&F&C&5&4&4R&x&F&F&C&A&5&5e&x&F&F&D&0&6&6s&x&F&F&D&5&7&7t&x&F&F&D&A&8&8o&x&F&F&D&F&9&9r&x&F&F&E&5&A&Ae&x&F&F&E&A&B&Bd;&6Successful login;0;1;0"
+        - "&x&F&F&C&5&4&4S&x&F&F&C&0&3&3e&x&F&F&B&B&2&2s&x&F&F&B&5&1&1s&x&F&F&B&0&0&0i&x&F&F&B&5&1&1o&x&F&F&B&B&2&2n &x&F&F&C&0&3&3R&x&F&F&C&5&4&4e&x&F&F&C&A&5&5s&x&F&F&D&0&6&6t&x&F&F&D&5&7&7o&x&F&F&D&A&8&8r&x&F&F&D&F&9&9e&x&F&F&E&5&A&Ad;&6Successful login;0;1;0"
+        - "&x&F&F&C&A&5&5S&x&F&F&C&5&4&4e&x&F&F&C&0&3&3s&x&F&F&B&B&2&2s&x&F&F&B&5&1&1i&x&F&F&B&0&0&0o&x&F&F&B&5&1&1n &x&F&F&B&B&2&2R&x&F&F&C&0&3&3e&x&F&F&C&5&4&4s&x&F&F&C&A&5&5t&x&F&F&D&0&6&6o&x&F&F&D&5&7&7r&x&F&F&D&A&8&8e&x&F&F&D&F&9&9d;&6Successful login;0;1;0"
+        - "&x&F&F&D&0&6&6S&x&F&F&C&A&5&5e&x&F&F&C&5&4&4s&x&F&F&C&0&3&3s&x&F&F&B&B&2&2i&x&F&F&B&5&1&1o&x&F&F&B&0&0&0n &x&F&F&B&5&1&1R&x&F&F&B&B&2&2e&x&F&F&C&0&3&3s&x&F&F&C&5&4&4t&x&F&F&C&A&5&5o&x&F&F&D&0&6&6r&x&F&F&D&5&7&7e&x&F&F&D&A&8&8d;&6Successful login;0;1;0"
+        - "&x&F&F&D&5&7&7S&x&F&F&D&0&6&6e&x&F&F&C&A&5&5s&x&F&F&C&5&4&4s&x&F&F&C&0&3&3i&x&F&F&B&B&2&2o&x&F&F&B&5&1&1n &x&F&F&B&0&0&0R&x&F&F&B&5&1&1e&x&F&F&B&B&2&2s&x&F&F&C&0&3&3t&x&F&F&C&5&4&4o&x&F&F&C&A&5&5r&x&F&F&D&0&6&6e&x&F&F&D&5&7&7d;&6Successful login;0;1;0"
+        - "&x&F&F&D&A&8&8S&x&F&F&D&5&7&7e&x&F&F&D&0&6&6s&x&F&F&C&A&5&5s&x&F&F&C&5&4&4i&x&F&F&C&0&3&3o&x&F&F&B&B&2&2n &x&F&F&B&5&1&1R&x&F&F&B&0&0&0e&x&F&F&B&5&1&1s&x&F&F&B&B&2&2t&x&F&F&C&0&3&3o&x&F&F&C&5&4&4r&x&F&F&C&A&5&5e&x&F&F&D&0&6&6d;&6Successful login;0;1;0"
+        - "&x&F&F&D&F&9&9S&x&F&F&D&A&8&8e&x&F&F&D&5&7&7s&x&F&F&D&0&6&6s&x&F&F&C&A&5&5i&x&F&F&C&5&4&4o&x&F&F&C&0&3&3n &x&F&F&B&B&2&2R&x&F&F&B&5&1&1e&x&F&F&B&0&0&0s&x&F&F&B&5&1&1t&x&F&F&B&B&2&2o&x&F&F&C&0&3&3r&x&F&F&C&5&4&4e&x&F&F&C&A&5&5d;&6Successful login;0;1;0"
+        - "&x&F&F&E&5&A&AS&x&F&F&D&F&9&9e&x&F&F&D&A&8&8s&x&F&F&D&5&7&7s&x&F&F&D&0&6&6i&x&F&F&C&A&5&5o&x&F&F&C&5&4&4n &x&F&F&C&0&3&3R&x&F&F&B&B&2&2e&x&F&F&B&5&1&1s&x&F&F&B&0&0&0t&x&F&F&B&5&1&1o&x&F&F&B&B&2&2r&x&F&F&C&0&3&3e&x&F&F&C&5&4&4d;&6Successful login;0;1;0"
+        - "&x&F&F&E&A&B&BS&x&F&F&E&5&A&Ae&x&F&F&D&F&9&9s&x&F&F&D&A&8&8s&x&F&F&D&5&7&7i&x&F&F&D&0&6&6o&x&F&F&C&A&5&5n &x&F&F&C&5&4&4R&x&F&F&C&0&3&3e&x&F&F&B&B&2&2s&x&F&F&B&5&1&1t&x&F&F&B&0&0&0o&x&F&F&B&5&1&1r&x&F&F&B&B&2&2e&x&F&F&C&0&3&3d;&6Successful login;0;1;0"
+        - "&x&F&F&E&F&C&CS&x&F&F&E&A&B&Be&x&F&F&E&5&A&As&x&F&F&D&F&9&9s&x&F&F&D&A&8&8i&x&F&F&D&5&7&7o&x&F&F&D&0&6&6n &x&F&F&C&A&5&5R&x&F&F&C&5&4&4e&x&F&F&C&0&3&3s&x&F&F&B&B&2&2t&x&F&F&B&5&1&1o&x&F&F&B&0&0&0r&x&F&F&B&5&1&1e&x&F&F&B&B&2&2d;&6Successful login;0;1;0"
+        - "&x&F&F&F&4&D&DS&x&F&F&E&F&C&Ce&x&F&F&E&A&B&Bs&x&F&F&E&5&A&As&x&F&F&D&F&9&9i&x&F&F&D&A&8&8o&x&F&F&D&5&7&7n &x&F&F&D&0&6&6R&x&F&F&C&A&5&5e&x&F&F&C&5&4&4s&x&F&F&C&0&3&3t&x&F&F&B&B&2&2o&x&F&F&B&5&1&1r&x&F&F&B&0&0&0e&x&F&F&B&5&1&1d;&6Successful login;0;1;0"
+        - "&x&F&F&F&A&E&ES&x&F&F&F&4&D&De&x&F&F&E&F&C&Cs&x&F&F&E&A&B&Bs&x&F&F&E&5&A&Ai&x&F&F&D&F&9&9o&x&F&F&D&A&8&8n &x&F&F&D&5&7&7R&x&F&F&D&0&6&6e&x&F&F&C&A&5&5s&x&F&F&C&5&4&4t&x&F&F&C&0&3&3o&x&F&F&B&B&2&2r&x&F&F&B&5&1&1e&x&F&F&B&0&0&0d;&6Successful login;0;1;0"
+        - "&x&F&F&F&F&F&FS&x&F&F&F&A&E&Ee&x&F&F&F&4&D&Ds&x&F&F&E&F&C&Cs&x&F&F&E&A&B&Bi&x&F&F&E&5&A&Ao&x&F&F&D&F&9&9n &x&F&F&D&A&8&8R&x&F&F&D&5&7&7e&x&F&F&D&0&6&6s&x&F&F&C&A&5&5t&x&F&F&C&5&4&4o&x&F&F&C&0&3&3r&x&F&F&B&B&2&2e&x&F&F&B&5&1&1d;&6Successful login;0;1;0"

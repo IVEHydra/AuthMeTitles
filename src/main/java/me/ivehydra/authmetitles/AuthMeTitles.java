@@ -34,6 +34,7 @@ public class AuthMeTitles extends JavaPlugin {
     private Map<Player, TitleHandler> activeTitle;
     private Map<Player, ActionBarHandler> activeActionBar;
     private Map<Player, AbstractHandler> activeBossBar;
+    private String latestVersion = null;
 
     @Override
     public void onEnable() {
@@ -70,6 +71,8 @@ public class AuthMeTitles extends JavaPlugin {
     public Map<Player, ActionBarHandler> getActiveActionBar() { return activeActionBar; }
 
     public Map<Player, AbstractHandler> getActiveBossBar() { return activeBossBar; }
+
+    public String getLatestVersion() { return latestVersion; }
 
     private boolean registerAuthMe() { return Bukkit.getPluginManager().getPlugin("AuthMe") != null; }
 
@@ -114,7 +117,11 @@ public class AuthMeTitles extends JavaPlugin {
         Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
             try(InputStream stream = new URL("https://api.spigotmc.org/legacy/update.php?resource=111370").openStream()) {
                 Scanner scanner = new Scanner(stream);
-                if(scanner.hasNext()) consumer.accept(scanner.next());
+                if(scanner.hasNext()) {
+                    String version = scanner.next();
+                    latestVersion = version;
+                    consumer.accept(version);
+                }
             } catch(IOException e) {
                 sendLog("[AuthMeTitles]" + ChatColor.RED + " Can't find a new version!");
                 sendLog("[AuthMeTitles]" + ChatColor.RED + " Error details: " + e.getMessage());

@@ -25,7 +25,7 @@ public class RegisterListener implements Listener {
         Bukkit.getScheduler().scheduleSyncDelayedTask(instance, () -> {
             TitleHandler.handle(p, "titles.register", true);
             ActionBarHandler.handle(p, "register");
-        }, 3L);
+        }, 1L);
 
     }
 
