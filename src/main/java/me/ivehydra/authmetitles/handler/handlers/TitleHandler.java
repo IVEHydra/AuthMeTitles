@@ -88,7 +88,7 @@ public class TitleHandler extends AbstractHandler {
 
         if(enabled) {
             List<String> titles = instance.getConfig().getStringList(path + ".animated.titles");
-            titles = instance.isPlaceholderAPIPresent() ? titles.stream().map(title -> PlaceholderAPI.setPlaceholders(p, title)).collect(Collectors.toList()) : titles;
+            titles = instance.isPluginPresent("PlaceholderAPI") ? titles.stream().map(title -> PlaceholderAPI.setPlaceholders(p, title)).collect(Collectors.toList()) : titles;
             int interval = instance.getConfig().getInt(path + ".animated.interval");
             boolean loop = instance.getConfig().getBoolean(path + ".animated.loop");
             TitleHandler successTitle = new TitleHandler(p, titles, interval, loop, last);
@@ -103,7 +103,7 @@ public class TitleHandler extends AbstractHandler {
             int stay = Integer.parseInt(args[3]);
             int fadeOut = Integer.parseInt(args[4]);
 
-            if(instance.isPlaceholderAPIPresent()) {
+            if(instance.isPluginPresent("PlaceholderAPI")) {
                 title = PlaceholderAPI.setPlaceholders(p, title);
                 subTitle = PlaceholderAPI.setPlaceholders(p, subTitle);
             }

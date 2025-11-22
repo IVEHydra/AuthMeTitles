@@ -73,7 +73,7 @@ public class BossBar18Handler extends AbstractHandler {
 
         boolean progress = instance.getConfig().getBoolean("bossBar.progress");
         String string = instance.getConfig().getString("bossBar.message." + path);
-        string = instance.isPlaceholderAPIPresent() ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(string)) : string;
+        string = instance.isPluginPresent("PlaceholderAPI") ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(string)) : string;
         AuthMe authMe = AuthMeApi.getInstance().getPlugin();
         int timeOut = authMe.getConfig().getInt("settings.restrictions.timeout");
         BossBar18Handler newBossBarHandler = new BossBar18Handler(p, string, timeOut, progress);

@@ -86,7 +86,7 @@ public class BossBar19Handler extends AbstractHandler {
         BarColor color = BarColor.valueOf(instance.getConfig().getString("bossBar.color"));
         BarStyle style = BarStyle.valueOf(instance.getConfig().getString("bossBar.style"));
         String string = instance.getConfig().getString("bossBar.message." + path);
-        string = instance.isPlaceholderAPIPresent() ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(string)) : string;
+        string = instance.isPluginPresent("PlaceholderAPI") ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(string)) : string;
         AuthMe authMe = AuthMeApi.getInstance().getPlugin();
         int timeOut = authMe.getConfig().getInt("settings.restrictions.timeout");
         BossBar19Handler newBossBarHandler = new BossBar19Handler(p, string, timeOut, progress, color, style);

@@ -67,7 +67,7 @@ public class ActionBarHandler extends AbstractHandler {
             actionBarHandler.stop();
 
         String actionBar = instance.getConfig().getString("actionBar." + path);
-        actionBar = instance.isPlaceholderAPIPresent() ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(actionBar)) : actionBar;
+        actionBar = instance.isPluginPresent("PlaceholderAPI") ? PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(actionBar)) : actionBar;
         boolean dynamic = path.equals("noRegister") || path.equals("noLogin");
         AuthMe authMe = AuthMeApi.getInstance().getPlugin();
         int configTimeOut = authMe.getConfig().getInt("settings.restrictions.timeout");

@@ -43,14 +43,14 @@ public class AuthMeTitles extends JavaPlugin {
         activeActionBar = new HashMap<>();
         activeBossBar = new HashMap<>();
 
-        if(!registerAuthMe()) {
+        if(!isPluginPresent("AuthMe")) {
             sendLog("[AuthMeTitles]" + ChatColor.RED + " AuthMe Not Found!");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
 
-        if(isPlaceholderAPIPresent()) sendLog("[AuthMeTitles]" + ChatColor.GREEN + " PlaceholderAPI has been found. Now you can use PlaceholderAPI placeholders for Titles, Animated Titles, ActionBars and BossBars.");
-        else sendLog("[AuthMeTitles]" + ChatColor.YELLOW + " PlaceholderAPI not found. The plugin will still function correctly, but you won't be able to use PlaceholderAPI placeholders for Titles, Animated Titles, ActionBars and BossBars.");
+        if(isPluginPresent("PlaceholderAPI")) sendLog("[AuthMeTitles]" + ChatColor.GREEN + " PlaceholderAPI has been found. Now you can use PlaceholderAPI placeholders for Titles (Static or Animated), ActionBars and BossBars.");
+        else sendLog("[AuthMeTitles]" + ChatColor.YELLOW + " PlaceholderAPI not found. The plugin will still function correctly, but you won't be able to use PlaceholderAPI placeholders for Titles (Static or Animated), ActionBars and BossBars.");
 
         registerConfigFile();
         registerCommands();
@@ -74,9 +74,7 @@ public class AuthMeTitles extends JavaPlugin {
 
     public String getLatestVersion() { return latestVersion; }
 
-    private boolean registerAuthMe() { return Bukkit.getPluginManager().getPlugin("AuthMe") != null; }
-
-    public boolean isPlaceholderAPIPresent() { return Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null; }
+    public boolean isPluginPresent(String plugin) { return Bukkit.getPluginManager().getPlugin(plugin) != null; }
 
     private void registerConfigFile() {
         File file = new File(getDataFolder(), "config.yml");
