@@ -18,7 +18,7 @@ public class LoginListener implements Listener {
     @EventHandler
     public void onLoginEvent(LoginEvent e) {
         Player p = e.getPlayer();
-        AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
+        AbstractHandler abstractHandler = instance.getActiveBossBar().get(p.getName());
 
         if(abstractHandler != null)
             abstractHandler.stop();

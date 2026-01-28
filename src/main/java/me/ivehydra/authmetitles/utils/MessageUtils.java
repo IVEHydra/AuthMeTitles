@@ -1,6 +1,7 @@
 package me.ivehydra.authmetitles.utils;
 
 import me.ivehydra.authmetitles.AuthMeTitles;
+import net.md_5.bungee.api.ChatColor;
 
 public enum MessageUtils {
 
@@ -20,6 +21,10 @@ public enum MessageUtils {
 
     public String getFormattedMessage(Object... replacements) {
         String message = instance.getConfig().getString(path);
+        if(message == null) {
+            instance.sendLog("[AuthMeTitles]" + ChatColor.RED + " Missing message in the configuration file: " + path);
+            return "null";
+        }
         message = StringUtils.getColoredString(message);
         for(int i = 0; i < replacements.length; i += 2) {
             String placeholder = (String) replacements[i];

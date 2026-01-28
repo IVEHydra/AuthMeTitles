@@ -50,18 +50,19 @@ public class ActionBarHandler extends AbstractHandler {
     @Override
     public void stop() {
         super.stop();
-        instance.getActiveActionBar().remove(p);
+        instance.getActiveActionBar().remove(p.getName());
     }
 
     public static void handle(Player p, String path) {
         if(p == null || !p.isOnline()) return;
 
+        String name = p.getName();
         AuthMeTitles instance = AuthMeTitles.getInstance();
         boolean enabled = instance.getConfig().getBoolean("actionBar.enabled");
 
         if(!enabled) return;
 
-        ActionBarHandler actionBarHandler = instance.getActiveActionBar().get(p);
+        ActionBarHandler actionBarHandler = instance.getActiveActionBar().get(name);
 
         if(actionBarHandler != null)
             actionBarHandler.stop();
@@ -75,7 +76,7 @@ public class ActionBarHandler extends AbstractHandler {
         ActionBarHandler newActionBarHandler = new ActionBarHandler(p, actionBar, timeout, dynamic);
 
         newActionBarHandler.start();
-        instance.getActiveActionBar().put(p, newActionBarHandler);
+        instance.getActiveActionBar().put(name, newActionBarHandler);
     }
 
 }

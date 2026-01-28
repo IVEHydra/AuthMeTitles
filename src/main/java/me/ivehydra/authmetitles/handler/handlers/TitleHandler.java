@@ -72,14 +72,15 @@ public class TitleHandler extends AbstractHandler {
     @Override
     public void stop() {
         super.stop();
-        instance.getActiveTitle().remove(p);
+        instance.getActiveTitle().remove(p.getName());
     }
 
     public static void handle(Player p, String path, boolean last) {
         if(p == null || !p.isOnline()) return;
 
+        String name = p.getName();
         AuthMeTitles instance = AuthMeTitles.getInstance();
-        TitleHandler animation = instance.getActiveTitle().get(p);
+        TitleHandler animation = instance.getActiveTitle().get(name);
 
         if(animation != null)
             animation.stop();
@@ -94,7 +95,7 @@ public class TitleHandler extends AbstractHandler {
             TitleHandler successTitle = new TitleHandler(p, titles, interval, loop, last);
 
             successTitle.start();
-            instance.getActiveTitle().put(p, successTitle);
+            instance.getActiveTitle().put(name, successTitle);
         } else {
             String[] args = Objects.requireNonNull(instance.getConfig().getString(path + ".static.title")).replace("%prefix%", MessageUtils.PREFIX.getPath()).split(";");
             String title = args[0];

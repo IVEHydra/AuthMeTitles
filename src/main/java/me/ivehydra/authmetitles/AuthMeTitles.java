@@ -12,7 +12,6 @@ import me.ivehydra.authmetitles.utils.VersionUtils;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,9 +30,9 @@ import java.util.function.Consumer;
 public class AuthMeTitles extends JavaPlugin {
 
     private static AuthMeTitles instance;
-    private Map<Player, TitleHandler> activeTitle;
-    private Map<Player, ActionBarHandler> activeActionBar;
-    private Map<Player, AbstractHandler> activeBossBar;
+    private Map<String, TitleHandler> activeTitle;
+    private Map<String, ActionBarHandler> activeActionBar;
+    private Map<String, AbstractHandler> activeBossBar;
     private String latestVersion = null;
 
     @Override
@@ -66,11 +65,11 @@ public class AuthMeTitles extends JavaPlugin {
 
     public static AuthMeTitles getInstance() { return instance; }
 
-    public Map<Player, TitleHandler> getActiveTitle() { return activeTitle; }
+    public Map<String, TitleHandler> getActiveTitle() { return activeTitle; }
 
-    public Map<Player, ActionBarHandler> getActiveActionBar() { return activeActionBar; }
+    public Map<String, ActionBarHandler> getActiveActionBar() { return activeActionBar; }
 
-    public Map<Player, AbstractHandler> getActiveBossBar() { return activeBossBar; }
+    public Map<String, AbstractHandler> getActiveBossBar() { return activeBossBar; }
 
     public String getLatestVersion() { return latestVersion; }
 

@@ -62,7 +62,7 @@ public class BossBar19Handler extends AbstractHandler {
     public void stop() {
         super.stop();
         if(bossBar != null) {
-            instance.getActiveBossBar().remove(p);
+            instance.getActiveBossBar().remove(p.getName());
             bossBar.removePlayer(p);
             if(bossBar.getPlayers().isEmpty())
                 bossBar = null;
@@ -72,12 +72,13 @@ public class BossBar19Handler extends AbstractHandler {
     public static void handle(Player p, String path) {
         if(p == null || !p.isOnline()) return;
 
+        String name = p.getName();
         AuthMeTitles instance = AuthMeTitles.getInstance();
         boolean enabled = instance.getConfig().getBoolean("bossBar.enabled");
 
         if(!enabled) return;
 
-        AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
+        AbstractHandler abstractHandler = instance.getActiveBossBar().get(name);
 
         if(abstractHandler != null)
             abstractHandler.stop();
@@ -92,7 +93,7 @@ public class BossBar19Handler extends AbstractHandler {
         BossBar19Handler newBossBarHandler = new BossBar19Handler(p, string, timeOut, progress, color, style);
 
         newBossBarHandler.start();
-        instance.getActiveBossBar().put(p, newBossBarHandler);
+        instance.getActiveBossBar().put(name, newBossBarHandler);
     }
 
 }

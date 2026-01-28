@@ -17,7 +17,7 @@ public class RegisterListener implements Listener {
     @EventHandler
     public void onRegisterEvent(RegisterEvent e) {
         Player p = e.getPlayer();
-        AbstractHandler abstractHandler = instance.getActiveBossBar().get(p);
+        AbstractHandler abstractHandler = instance.getActiveBossBar().get(p.getName());
 
         if(abstractHandler != null)
             abstractHandler.stop();
