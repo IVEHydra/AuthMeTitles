@@ -1,6 +1,6 @@
 # Introduction
 
-**AuthMeTitles** is a plugin for **SpigotMC** that Displays Titles (Static or Animated), ActionBars and BossBars during the login and registration.
+**AuthMeTitles** is a plugin for **SpigotMC** that Sends Sounds and Displays Titles (Static or Animated), ActionBars and BossBars during the login and registration.
 
 # More Details
 

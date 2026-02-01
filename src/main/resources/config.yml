@@ -33,6 +33,7 @@ actionBar:
 
 titles:
   noRegister:
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.0"
     static:
       #Title;SubTitle;FadeIn;Stay;FadeOut
       title: "&3Register;&fPlease, register with the command: &3/register <password> <confirmPassword>;1;30;1"
@@ -76,6 +77,7 @@ titles:
         - "&x&F&F&F&F&F&FR&x&E&0&F&3&F&0e&x&C&0&E&7&E&1g&x&A&1&D&B&D&2i&x&8&2&D&0&C&3s&x&6&3&C&4&B&4t&x&4&3&B&8&A&5e&x&2&4&A&C&9&6r;&fPlease,
         register with the command: &3/register <password> <confirmPassword>;0;1;0"
   noLogin:
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.0"
     static:
       title: "&eLogin;&fPlease, login with the command: &e/login <password>;1;30;1"
     animated:
@@ -92,6 +94,7 @@ titles:
         - "&x&F&6&F&5&C&8L&x&E&D&E&B&9&1o&x&E&4&E&0&5&Ag&x&D&B&D&6&2&3i&x&E&4&E&0&5&An;&fPlease, login with the command: &e/login <password>;0;1;0"
         - "&x&F&F&F&F&F&FL&x&F&6&F&5&C&8o&x&E&D&E&B&9&1g&x&E&4&E&0&5&Ai&x&D&B&D&6&2&3n;&fPlease, login with the command: &e/login <password>;0;1;0"
   register:
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.0"
     static:
       title: "&2Registered;&2Successfully registered!;1;2;1"
     animated:
@@ -118,6 +121,7 @@ titles:
         - "&x&E&6&E&D&E&6R&x&C&D&D&C&C&De&x&B&4&C&A&B&4g&x&9&B&B&8&9&Bi&x&8&1&A&7&8&3s&x&6&8&9&5&6&At&x&4&F&8&3&5&1e&x&3&6&7&2&3&8r&x&1&D&6&0&1&Fe&x&3&6&7&2&3&8d;&2Successfully registered!;0;1;0"
         - "&x&F&F&F&F&F&FR&x&E&6&E&D&E&6e&x&C&D&D&C&C&Dg&x&B&4&C&A&B&4i&x&9&B&B&8&9&Bs&x&8&1&A&7&8&3t&x&6&8&9&5&6&Ae&x&4&F&8&3&5&1r&x&3&6&7&2&3&8e&x&1&D&6&0&1&Fd;&2Successfully registered!;0;1;0"
   login:
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.0"
     static:
       title: "&aLogin;&aSuccessful login;1;2;1"
     animated:
@@ -158,6 +162,7 @@ titles:
         - "&x&C&8&F&F&B&FL&x&9&1&F&F&8&0o&x&5&9&F&F&4&0g&x&2&2&F&F&0&0i&x&5&9&F&F&4&0n;&aSuccessful login;0;1;0"
         - "&x&F&F&F&F&F&FL&x&C&8&F&F&B&Fo&x&9&1&F&F&8&0g&x&5&9&F&F&4&0i&x&2&2&F&F&0&0n;&aSuccessful login;0;1;0"
   sessionRestored:
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.0"
     static:
       title: "&6Session Restored;&6Successful login;1;2;1"
     animated:

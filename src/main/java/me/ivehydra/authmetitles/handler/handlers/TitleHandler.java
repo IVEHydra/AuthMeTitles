@@ -1,5 +1,6 @@
 package me.ivehydra.authmetitles.handler.handlers;
 
+import com.cryptomorin.xseries.XSound;
 import com.cryptomorin.xseries.messages.Titles;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.ivehydra.authmetitles.AuthMeTitles;
@@ -8,10 +9,12 @@ import me.ivehydra.authmetitles.utils.MessageUtils;
 import me.ivehydra.authmetitles.utils.StringUtils;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class TitleHandler extends AbstractHandler {
@@ -110,6 +113,44 @@ public class TitleHandler extends AbstractHandler {
             }
             Titles.sendTitle(p, fadeIn * 20, stay * 20, fadeOut * 20, StringUtils.getColoredString(title), StringUtils.getColoredString(subTitle));
         }
+
+        String[] args = Objects.requireNonNull(instance.getConfig().getString(path + ".sound")).split(";");
+
+        if(args[0].equalsIgnoreCase("null"))
+            return;
+
+        double volume;
+        double pitch;
+
+        try {
+            volume = Integer.parseInt(args[1]);
+            pitch = Integer.parseInt(args[2]);
+        } catch(NumberFormatException e) {
+            volume = 1.0;
+            pitch = 1.0;
+        }
+
+        Optional<XSound> xSound = XSound.of(args[0]);
+
+        if(!xSound.isPresent()) {
+            instance.sendLog("[AuthMeTitles]" + ChatColor.RED + " Sound not found: " + args[0]);
+            return;
+        }
+
+        try {
+            Sound sound = xSound.get().get();
+
+            if(sound == null) {
+                instance.sendLog("[AuthMeTitles]" + ChatColor.RED + " Invalid Sound: " + args[0]);
+                return;
+            }
+
+            p.playSound(p.getLocation(), sound, (float) volume, (float) pitch);
+        } catch(Exception e) {
+            instance.sendLog("[AuthMeTitles]" + ChatColor.RED + " An error occurred while trying to play the sound. Ensure that the sound name is correct and supported by the server.");
+            instance.sendLog("[AuthMeTitles]" + ChatColor.RED + " Error details: " + e.getMessage());
+        }
+
     }
 
 }
