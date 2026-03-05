@@ -116,7 +116,7 @@ public class TitleHandler extends AbstractHandler {
 
         String[] args = Objects.requireNonNull(instance.getConfig().getString(path + ".sound")).split(";");
 
-        if(args[0].equalsIgnoreCase("null"))
+        if(args[0].isEmpty())
             return;
 
         double volume;
